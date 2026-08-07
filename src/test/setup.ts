@@ -42,3 +42,20 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: () => false,
   }),
 });
+
+// Mock IntersectionObserver for jsdom test environment (Framer Motion whileInView)
+class MockIntersectionObserver {
+  readonly root: Element | null = null;
+  readonly rootMargin: string = '';
+  readonly thresholds: ReadonlyArray<number> = [];
+  disconnect() {}
+  observe() {}
+  takeRecords(): IntersectionObserverEntry[] { return []; }
+  unobserve() {}
+}
+
+Object.defineProperty(window, 'IntersectionObserver', {
+  writable: true,
+  configurable: true,
+  value: MockIntersectionObserver,
+});

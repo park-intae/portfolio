@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { smoothScrollTo } from '../../utils/scroll';
 
 interface DotItem {
   id: string;
@@ -17,33 +18,41 @@ export const DotNavigation: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 250;
+      const viewportHeight = window.innerHeight;
+      const targetTop = viewportHeight * 0.25;
+      const targetBottom = viewportHeight * 0.75;
+
+      let maxOverlap = 0;
+      let currentActive = activeSection;
 
       for (const item of DOT_ITEMS) {
         const element = document.getElementById(item.id);
         if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
+          const rect = element.getBoundingClientRect();
+          const overlapTop = Math.max(rect.top, targetTop);
+          const overlapBottom = Math.min(rect.bottom, targetBottom);
+          const overlap = Math.max(0, overlapBottom - overlapTop);
 
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(item.id);
-            break;
+          if (overlap > maxOverlap) {
+            maxOverlap = overlap;
+            currentActive = item.id;
           }
         }
       }
+
+      if (currentActive !== activeSection) {
+        setActiveSection(currentActive);
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeSection]);
 
   const scrollTo = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    smoothScrollTo(id, 750);
   };
 
   return (

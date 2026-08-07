@@ -63,6 +63,8 @@
 ## 🧭 4. 사이드 도트 네비게이션 (Dot Navigation) 규격
 - **위치**: 화면 우측 중앙 고정 (`fixed right-6 top-1/2 -translate-y-1/2 z-50`)
 - **기능**: 활성 섹션 하이라이트, 클릭 시 부드러운 스크롤 이동, 모바일 hidden 처리 (`hidden md:flex`)
+- **양방향 영역 감지 알고리즘 (Bidirectional Range Sensing)**:
+  - 위 ➡️ 아래(Down-scroll) 및 아래 ➡️ 위(Up-scroll) 스크롤 양방향 모두에서 100% 직관적인 도트 전환을 보장하기 위해 단일 스크롤 지점(Single Point) 방식 대신 **화면 뷰포트 활성 영역(Center Viewport Active Zone) 점유 비율 감지 방식**을 적용합니다.
 
 ---
 

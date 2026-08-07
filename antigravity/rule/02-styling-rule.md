@@ -57,5 +57,7 @@
 
 ## 🚀 4. 애니메이션 및 인터랙션 가이드
 
-- **Framer Motion**: Section entrance, 호버 확대, 모달 팝업 등에 60fps 인터랙션 적용
+- **Framer Motion**: Section entrance(whileInView), 호버 확대(whileHover), 모달 팝업(AnimatePresence) 등에 60fps 인터랙션 적용
 - **Point Blue Glow**: 호버 및 강조 카드 시 `#0066FF` 기반의 은은한 블루 글로우 섀도우 적용
+- **시네마틱 이징 스크롤 (Cinematic Custom Smooth Scroll)**: 
+  - 도트 네비게이션 및 푸터 'Back to Top' 버튼 클릭 시 브라우저 기본 `scrollIntoView` 대신 `requestAnimationFrame` + `easeInOutCubic` 750ms 커스텀 스크롤 유틸리티 (`src/utils/scroll.ts`)를 적용하여 스크롤이 부드럽게 감속하면서 지점까지 따라 이동하는 시네마틱 감성 모션 구현

@@ -1,10 +1,12 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 import { headerContent } from '../../content';
+import { smoothScrollTo } from '../../utils/scroll';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    smoothScrollTo(0, 750);
   };
 
   return (
@@ -16,13 +18,15 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Back to Top Button */}
-        <button
+        <motion.button
           onClick={scrollToTop}
-          className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl glass-panel text-xs font-semibold hover:border-point hover:text-point transition-all"
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl glass-panel text-xs font-semibold hover:border-point hover:text-point transition-colors"
         >
           <span>Back to Top</span>
-          <ArrowUp className="w-3.5 h-3.5" />
-        </button>
+          <ArrowUp className="w-3.5 h-3.5 text-point" />
+        </motion.button>
       </div>
     </footer>
   );
