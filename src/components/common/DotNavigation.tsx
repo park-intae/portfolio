@@ -71,7 +71,7 @@ export const DotNavigation: React.FC = () => {
             aria-current={isActive ? 'true' : undefined}
           >
             {/* Tooltip Label on Hover */}
-            <span className="absolute right-8 px-2.5 py-1 rounded bg-slate-900 dark:bg-slate-100 text-slate-100 dark:text-slate-900 text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all pointer-events-none shadow-md">
+            <span className="absolute right-8 px-2.5 py-1 rounded glass-panel text-main text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all pointer-events-none shadow-md">
               {item.label}
             </span>
 
@@ -80,7 +80,7 @@ export const DotNavigation: React.FC = () => {
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 isActive
                   ? 'bg-point scale-125 shadow-[0_0_12px_rgba(0,102,255,0.6)]'
-                  : 'bg-slate-400/40 hover:bg-slate-400 dark:hover:bg-slate-300'
+                  : 'bg-card-border hover:bg-point/50'
               }`}
             />
           </button>

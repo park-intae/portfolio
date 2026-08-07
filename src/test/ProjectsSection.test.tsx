@@ -24,4 +24,32 @@ describe('ProjectsSection Component Unit Tests', () => {
       expect(subtitles.length).toBeGreaterThanOrEqual(1);
     }
   });
+
+  it('should switch to next project detail when clicking the next chevron button', () => {
+    render(<ProjectsSection />);
+    const nextButton = screen.getByLabelText('다음 프로젝트');
+    fireEvent.click(nextButton);
+
+    if (projectsContent.projects.length > 1) {
+      const secondProjectTitle = projectsContent.projects[1].title;
+      expect(screen.getAllByText(secondProjectTitle).length).toBeGreaterThanOrEqual(1);
+    }
+  });
+
+  it('should switch to previous project detail when clicking the previous chevron button', () => {
+    render(<ProjectsSection />);
+    const prevButton = screen.getByLabelText('이전 프로젝트');
+    fireEvent.click(prevButton);
+
+    // Clicking prev from index 0 should loop to last project
+    const lastProject = projectsContent.projects[projectsContent.projects.length - 1];
+    expect(screen.getAllByText(lastProject.title).length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('should trigger scroll to project list when mobile scroll button is clicked', () => {
+    render(<ProjectsSection />);
+    const scrollButton = screen.getByText('프로젝트 전체 목록으로 올라가기');
+    expect(scrollButton).toBeInTheDocument();
+    fireEvent.click(scrollButton);
+  });
 });

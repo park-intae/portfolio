@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, ExternalLink } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Moon, Sun, ExternalLink, Menu, X } from 'lucide-react';
 import { headerContent } from '../../content';
+import { smoothScrollTo } from '../../utils/scroll';
+
+interface NavItem {
+  id: string;
+  label: string;
+}
+
+const NAV_ITEMS: NavItem[] = [
+  { id: 'hero', label: 'Hero' },
+  { id: 'about', label: 'About Me' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' }
+];
 
 export const Navbar: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+
   // Lazy state initializer to avoid synchronous setState call inside useEffect
   const [isDark, setIsDark] = useState<boolean>(() => {
     if (typeof window === 'undefined') return true;
@@ -23,21 +39,58 @@ export const Navbar: React.FC = () => {
     }
   }, [isDark]);
 
+  // Lock body scroll when mobile/tablet menu drawer is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   const toggleTheme = () => {
     const nextTheme = !isDark;
     setIsDark(nextTheme);
     localStorage.setItem('theme', nextTheme ? 'dark' : 'light');
   };
 
+  const handleNavClick = (id: string) => {
+    setIsMobileMenuOpen(false);
+    smoothScrollTo(id, 750);
+  };
+
   return (
     <header className="sticky top-0 z-40 w-full glass-panel border-b transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Brand / Logo */}
-        <a href="#hero" className="font-ibm font-bold text-xl tracking-tight hover:text-point transition-colors">
+        <a
+          href="#hero"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick('hero');
+          }}
+          className="font-ibm font-bold text-xl tracking-tight hover:text-point transition-colors"
+        >
           {headerContent.logoText}
         </a>
 
-        {/* Action Links & Theme Toggle */}
+        {/* Desktop Navigation Links (Visible on lg: 1024px+) */}
+        <nav className="hidden lg:flex items-center space-x-6">
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className="text-xs font-semibold text-muted hover:text-point transition-colors"
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
+
+        {/* Action Links & Mobile Menu Toggle */}
         <div className="flex items-center space-x-3 sm:space-x-4">
           {/* GitHub Button */}
           {headerContent.githubUrl && (
@@ -77,8 +130,71 @@ export const Navbar: React.FC = () => {
           >
             {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
+
+          {/* Mobile & Tablet Hamburger Menu Toggle Button (Visible on lg:hidden) */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 rounded-lg border border-card hover:border-point text-main lg:hidden transition-colors"
+            aria-label="Toggle mobile and tablet menu drawer"
+            aria-expanded={isMobileMenuOpen}
+          >
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile & Tablet Slide-in Navigation Drawer */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            className="fixed inset-0 top-16 z-50 bg-slate-950/60 backdrop-blur-sm lg:hidden flex justify-end"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <motion.div
+              className="w-4/5 max-w-xs h-[calc(100vh-4rem)] glass-panel border-l p-6 text-main flex flex-col justify-between shadow-2xl"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="space-y-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-point block pb-2 border-b border-card">
+                  Navigation Menu
+                </span>
+                <nav className="flex flex-col space-y-4">
+                  {NAV_ITEMS.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => handleNavClick(item.id)}
+                      className="text-left font-ibm text-lg font-semibold text-main hover:text-point transition-colors py-1"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Mobile/Tablet Drawer Footer Actions */}
+              <div className="pt-6 border-t border-card space-y-3">
+                <div className="flex items-center justify-between text-xs text-muted font-medium">
+                  <span>테마 모드</span>
+                  <button
+                    onClick={toggleTheme}
+                    className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-card hover:border-point text-main hover:text-point transition-colors"
+                  >
+                    {isDark ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
+                    <span>{isDark ? 'Light Mode' : 'Dark Mode'}</span>
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

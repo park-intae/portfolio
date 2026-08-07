@@ -11,7 +11,7 @@ const easeInOutCubic = (t: number): number => {
  * @param duration Animation duration in milliseconds (default: 750ms)
  */
 export const smoothScrollTo = (target: number | string, duration: number = 750): void => {
-  let targetY = 0;
+  let targetY: number;
 
   if (typeof target === 'string') {
     const element = document.getElementById(target);
