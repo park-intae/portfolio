@@ -1,0 +1,11 @@
+{
+  "logoText": "PARK INTAE",
+  "githubUrl": "https://github.com/park-intae",
+  "notionUrl": "https://notion.so",
+  "navItems": [
+    { "id": "hero", "label": "Home" },
+    { "id": "about", "label": "About Me" },
+    { "id": "projects", "label": "Projects" },
+    { "id": "experience", "label": "Experience & Training" }
+  ]
+}

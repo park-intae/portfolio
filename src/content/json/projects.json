@@ -1,0 +1,48 @@
+{
+  "projects": [
+    {
+      "id": "project-1",
+      "title": "알뜰폰 요금제 비교 서비스",
+      "subtitle": "공공데이터 API 기반 요금제 검색 및 비교 서비스",
+      "description": "사용자의 통신 사용 패턴에 맞춰 알뜰폰 요금제를 쉽고 빠르게 비교 분석해 주는 모던 웹 서비스입니다.",
+      "detailedDescription": "공공데이터 포털의 알뜰폰 API와 실시간 데이터 연동하여 맞춤형 필터링 및 요금제 비교 추천 알고리즘을 구현하였습니다.",
+      "tags": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+      "imageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+      "demoUrl": "https://example.com/phone-plan",
+      "githubUrl": "https://github.com/park-intae/phone-plan"
+    },
+    {
+      "id": "project-2",
+      "title": "AI 에이전트 대시보드",
+      "subtitle": "멀티 AI 작업 스케줄링 및 모니터링 시스템",
+      "description": "복수의 AI 에이전트 상태를 실시간으로 시각화하고 관리하는 개발자용 대시보드입니다.",
+      "detailedDescription": "웹소켓 실시간 이벤트 스트리밍, 대용량 로그 트랜스크립트 뷰어 및 인터랙티브 그래프를 통합 제공합니다.",
+      "tags": ["React 19", "TypeScript", "WebSockets", "Framer Motion"],
+      "imageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "demoUrl": "https://example.com/ai-dashboard",
+      "githubUrl": "https://github.com/park-intae/ai-dashboard"
+    },
+    {
+      "id": "project-3",
+      "title": "클라우드 메트릭스 시각화",
+      "subtitle": "실시간 분산 인프라 모니터링 플랫폼",
+      "description": "클라우드 서버 사용량과 트래픽 현황을 한눈에 파악할 수 있는 인프라 애널리틱스 툴입니다.",
+      "detailedDescription": "시계열 트래픽 데이터를 고속 파싱하여 차트로 표현하고 알림 이벤트를 전달합니다.",
+      "tags": ["Next.js", "Node.js", "PostgreSQL", "Chart.js"],
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "demoUrl": "https://example.com/cloud-metrics",
+      "githubUrl": "https://github.com/park-intae/cloud-metrics"
+    },
+    {
+      "id": "project-4",
+      "title": "Antigravity 포트폴리오 하네스",
+      "subtitle": "AI 오케스트레이션 연동 모던 SPA 포트폴리오",
+      "description": "Vite + React 기반에 AI 워크플로우 통제 하네스를 결합한 모던 포트폴리오 웹사이트입니다.",
+      "detailedDescription": "와이어프레임 1:1 매핑, 도트 네비게이션, JSON 데이터 완전 분리 및 GitHub Actions CI/CD 파이프라인이 수립되어 있습니다.",
+      "tags": ["React 19", "TypeScript", "Tailwind CSS v4", "GitHub Actions"],
+      "imageUrl": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
+      "demoUrl": "https://park-intae.github.io/portfolio",
+      "githubUrl": "https://github.com/park-intae/portfolio"
+    }
+  ]
+}

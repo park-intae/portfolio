@@ -1,0 +1,34 @@
+{
+  "experiences": [
+    {
+      "id": "exp-1",
+      "title": "프론트엔드 / 풀스택 개발자",
+      "organization": "테크 솔루션즈 연구소",
+      "period": "2024.03 - 현재",
+      "description": "웹 서비스 프론트엔드 모듈 아키텍처 설계, 반응형 UI 개발 및 하네스 자동화 구축"
+    },
+    {
+      "id": "exp-2",
+      "title": "웹 스튜디오 개발자",
+      "organization": "크리에이티브 코딩 스튜디오",
+      "period": "2023.01 - 2024.02",
+      "description": "고객 맞춤형 반응형 웹사이트 제작 및 데이터 대시보드 렌더링 최적화"
+    }
+  ],
+  "trainings": [
+    {
+      "id": "trn-1",
+      "title": "모던 웹 & AI 소프트웨어 엔지니어링 딥다이브 과정",
+      "institution": "소프트웨어 아카데미",
+      "period": "2022.06 - 2022.12",
+      "certificateOrNote": "이수 및 우수 수료"
+    },
+    {
+      "id": "trn-2",
+      "title": "컴퓨터공학 관련 과정 이수",
+      "institution": "대학교 / 교육 기관",
+      "period": "2018.03 - 2022.02",
+      "certificateOrNote": "학사 학위 취득"
+    }
+  ]
+}

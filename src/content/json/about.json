@@ -1,0 +1,42 @@
+{
+  "metrics": [
+    {
+      "id": "metric-1",
+      "value": "95+",
+      "label": "Lighthouse",
+      "iconName": "Zap"
+    },
+    {
+      "id": "metric-2",
+      "value": "3+ yrs",
+      "label": "Experience",
+      "iconName": "Award"
+    },
+    {
+      "id": "metric-3",
+      "value": "15+",
+      "label": "Projects Completed",
+      "iconName": "FolderGit2"
+    },
+    {
+      "id": "metric-4",
+      "value": "99.9%",
+      "label": "Build Success Rate",
+      "iconName": "CheckCircle2"
+    }
+  ],
+  "techStackCategories": [
+    {
+      "categoryName": "Front-End",
+      "skills": ["React 19", "TypeScript", "Tailwind CSS v4", "Vite", "Framer Motion"]
+    },
+    {
+      "categoryName": "Back-End & DB",
+      "skills": ["Node.js", "Express", "Python", "FastAPI", "PostgreSQL"]
+    },
+    {
+      "categoryName": "DevOps & Tools",
+      "skills": ["Git", "GitHub Actions", "Docker", "Vercel", "Figma"]
+    }
+  ]
+}
