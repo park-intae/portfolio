@@ -68,6 +68,7 @@ export const DotNavigation: React.FC = () => {
             onClick={() => scrollTo(item.id)}
             className="group relative flex items-center justify-center p-1 focus:outline-none"
             aria-label={`Scroll to ${item.label}`}
+            aria-current={isActive ? 'true' : undefined}
           >
             {/* Tooltip Label on Hover */}
             <span className="absolute right-8 px-2.5 py-1 rounded bg-slate-900 dark:bg-slate-100 text-slate-100 dark:text-slate-900 text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all pointer-events-none shadow-md">

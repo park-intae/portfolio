@@ -41,6 +41,12 @@
     transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
   }
+
+  /* Accessibility Focus Ring */
+  :focus-visible {
+    outline: 2px solid var(--point-blue);
+    outline-offset: 2px;
+  }
 }
 
 /* Font Family Utility Classes */

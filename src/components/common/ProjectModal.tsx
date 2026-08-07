@@ -16,7 +16,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       }
     };
 
+    let previousActiveElement: HTMLElement | null = null;
+
     if (project) {
+      previousActiveElement = document.activeElement as HTMLElement;
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
     }
@@ -24,6 +27,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
     return () => {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
+      if (previousActiveElement) {
+        previousActiveElement.focus();
+      }
     };
   }, [project, onClose]);
 
@@ -40,6 +46,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           transition={{ duration: 0.25 }}
         >
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
             className="glass-panel w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl permanent-elevation border border-point/30 p-6 sm:p-8 relative text-main shadow-2xl"
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.94, y: 20 }}
@@ -63,6 +72,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <img
                 src={project.imageUrl}
                 alt={project.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
@@ -70,7 +81,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 <span className="inline-block px-2.5 py-1 rounded bg-point text-white text-[11px] font-bold mb-1 shadow">
                   Project Detail View
                 </span>
-                <h3 className="font-ibm text-2xl font-bold text-white">
+                <h3 id="modal-title" className="font-ibm text-2xl font-bold text-white">
                   {project.title}
                 </h3>
               </div>

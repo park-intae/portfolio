@@ -41,7 +41,9 @@ antigravity/
     │   └── step-05-qa-and-optimization.md
     └── Phase2/                          # [Phase 2: UI/UX 고도화 - In Progress]
         ├── step-01-ui-enhancement.md    # [Completed] 라이트/다크 테마 고대비화
-        └── step-02-motion-and-animation.md # [In Progress] 60fps 마이크로 애니메이션 세팅
+        ├── step-02-motion-and-animation.md # [Completed] 60fps 마이크로 애니메이션 세팅
+        ├── step-03-accessibility-and-performance.md # [Completed] 웹접근성(a11y) & 성능 최적화
+        └── step-04-mobile-ux-and-responsive.md # [Pending] 모바일 네비게이션 드로어 & 반응형 UX
 ```
 
 ---
@@ -53,6 +55,8 @@ antigravity/
 | **Phase1-All** | **Phase 1 Foundations** | `antigravity/workflow/Phase1/*` | **[Completed]** | SPA 구조, JSON 데이터 격리, 19개 유닛테스트, CI/CD 완비 |
 | **Phase2-01** | **UI Enhancement** | [`step-01-ui-enhancement.md`](file:///C:/Users/pit19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/portfolio/antigravity/workflow/Phase2/step-01-ui-enhancement.md) | **[Completed]** | CSS 테마 변수 기반 유틸리티 전면 통제 & 라이트/다크 고대비 완료 |
 | **Phase2-02** | **Motion & Animation** | [`step-02-motion-and-animation.md`](file:///C:/Users/pit19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/portfolio/antigravity/workflow/Phase2/step-02-motion-and-animation.md) | **[Completed]** | 60fps 마이크로 애니메이션, 모달 트랜지션 & 도트 양방향 감지 완료 |
+| **Phase2-03** | **Accessibility & Performance** | [`step-03-accessibility-and-performance.md`](file:///C:/Users/pit19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/portfolio/antigravity/workflow/Phase2/step-03-accessibility-and-performance.md) | **[Completed]** | a11y 키보드 포커스링, ARIA 표준 & 자원 로딩 성능 최적화 완료 |
+| **Phase2-04** | **Mobile UX & Responsive** | [`step-04-mobile-ux-and-responsive.md`](file:///C:/Users/pit19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/portfolio/antigravity/workflow/Phase2/step-04-mobile-ux-and-responsive.md) | **[Pending]** | Navbar 햄버거 토글, Framer Motion 모바일 슬라이드 드로어 |
 
 *상태 값 규격: `[Pending]`, `[In Progress]`, `[Blocked]`, `[Completed]`*
 
