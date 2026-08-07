@@ -50,3 +50,17 @@ antigravity/
 | **05** | **QA & Optimization** | [`step-05-qa-and-optimization.md`](file:///C:/Users/pit19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/portfolio/antigravity/workflow/step-05-qa-and-optimization.md) | **[Completed]** | Vitest 유닛 테스트 16개 통과, 린트 0건, 빌드 검증 성공 |
 
 *상태 값 규격: `[Pending]`, `[In Progress]`, `[Blocked]`, `[Completed]`*
+
+---
+
+## 🛡️ 4. 안전 가이드라인 및 커밋/푸시 통제 원칙 (Safeguards & Commit Protocol)
+
+1. **워크플로우 완료 상태 동기화 (Workflow Completion Tracking)**:
+   - 각 작업 단계가 완료될 때마다 반드시 해당 워크플로우 파일(`antigravity/workflow/step-XX-*.md`) 내의 체크리스트 항목(`- [x]`)과 진행 현황표(`MAIN_ORCHESTRATOR.md`)의 상태를 `[Completed]`로 즉시 갱신합니다.
+2. **원격 푸시 제한 및 로컬 커밋 원칙 (Strict Git Push Restriction)**:
+   - **사용자의 명시적인 명령(지시)이 없는 경우 절대로 `git push`를 자발적으로 진행하지 않습니다.**
+   - 작업 완료 시 오직 로컬 깃 커밋(`git commit`)까지만 수행하고 대기합니다.
+3. **임의 코드 생략 금지**:
+   - 주석으로 `// TODO: Implement later` 남기지 않고 완결된 코드를 작성합니다.
+4. **실시간 빌드 & 단위 테스트 검증**:
+   - 파일 수정 후 반드시 `npm run test`, `npm run lint`, `npm run build`를 통과한 후 커밋합니다.

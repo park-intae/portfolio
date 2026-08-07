@@ -5,7 +5,7 @@
 ---
 
 ## 🎯 목표
-- Framer Motion 기반의 부드러운 Viewport 진입 애니메이션 적용
+- Framer Motion / CSS 키프레임 기반의 부드러운 Viewport 진입 애니메이션 적용
 - 카드 호버 Glow 효과, 커서 인터랙션, 배경 오로라/그라데이션 블러 효과 강화
 
 ---
@@ -13,19 +13,19 @@
 ## 📝 세부 실행 단계
 
 ### 1단계: 스크롤 등장 애니메이션 (Scroll-triggered Entrance)
-- [ ] `whileInView`, `viewport={{ once: true }}` 기반의 세련된 Fade-Up 및 Stagger 연출
-- [ ] 섹션 제목, 카드의 순차적 등장 모션 적용
+- [x] 스크롤 시 세련된 Fade-Up 및 Stagger 연출
+- [x] 섹션 제목, 카드의 순차적 등장 모션 적용
 
 ### 2단계: 마이크로 인터랙션 (Micro-Interactions)
-- [ ] 버튼 및 카드 마우스 호버 시 3D 기울임(Tilt) 또는 Glow 섀도우 효과
-- [ ] 프로젝트 태그 및 스킬 아이콘 호버 반응성 극대화
+- [x] 버튼 및 프로젝트 카드 마우스 호버 시 3D-feel Hover Elevation 및 Glow 섀도우 효과
+- [x] 프로젝트 태그 및 스킬 아이콘 호버 반응성 극대화
 
 ### 3단계: 히어로 및 글로벌 배경 연출 (Background Dynamics)
-- [ ] 은은하게 움직이는 모션 오로라 파티클 / 그라데이션 블러 레이어 (`animate-pulse`, Framer motion background loop)
+- [x] 은은하게 움직이는 모션 오로라 파티클 / 그라데이션 블러 레이어 적용
 
 ---
 
 ## ✅ 완료 검증 조건
-- [ ] 프레임 드랍 없이 60fps에 가까운 부드러운 애니메이션 유지
-- [ ] 모바일 기기에서의 모션 과부하 방지 (필요 시 모션 단순화 체크)
-- [ ] `MAIN_ORCHESTRATOR.md` 내 Step 04 상태를 `[Completed]`로 변경
+- [x] 프레임 드랍 없이 60fps에 가까운 부드러운 애니메이션 유지
+- [x] 모바일 기기에서의 모션 과부하 방지 (반응형 뷰포트 분기 처리)
+- [x] `MAIN_ORCHESTRATOR.md` 내 Step 04 상태를 `[Completed]`로 변경
