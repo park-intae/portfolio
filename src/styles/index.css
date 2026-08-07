@@ -1,24 +1,32 @@
 @import "tailwindcss";
 
 @layer base {
-  :root {
+  :root,
+  html.light {
     --bg-main: #f8f9fa;
+    --bg-secondary: #f1f5f9;
     --text-main: #0f172a;
-    --text-muted: #475569;
+    --text-muted: #334155;
+    --text-caption: #475569;
     --point-blue: #0066ff;
-    --card-bg: rgba(255, 255, 255, 0.8);
-    --card-border: rgba(0, 102, 255, 0.12);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --card-border: rgba(0, 102, 255, 0.18);
+    --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
     --font-pretendard: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
     --font-ibm-plex: 'IBM Plex Sans KR', sans-serif;
+    color-scheme: light;
   }
 
   html.dark {
     --bg-main: #0b0f19;
+    --bg-secondary: #111827;
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
+    --text-caption: #64748B;
     --point-blue: #0066ff;
-    --card-bg: rgba(15, 23, 42, 0.7);
-    --card-border: rgba(255, 255, 255, 0.08);
+    --card-bg: rgba(15, 23, 42, 0.75);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
     color-scheme: dark;
   }
 
@@ -55,6 +63,39 @@
 
 .border-point {
   border-color: var(--point-blue);
+}
+
+/* Theme Specific Text, BG & Border Utilities */
+.text-main {
+  color: var(--text-main);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-caption {
+  color: var(--text-caption);
+}
+
+.bg-main {
+  background-color: var(--bg-main);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-card {
+  background-color: var(--card-bg);
+}
+
+.border-card {
+  border-color: var(--card-border);
+}
+
+.shadow-card {
+  box-shadow: var(--card-shadow);
 }
 
 /* Glassmorphism & Elevation Utility Classes */

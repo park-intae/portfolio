@@ -16,8 +16,10 @@ export const Navbar: React.FC = () => {
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
     } else {
       document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
     }
   }, [isDark]);
 
@@ -43,7 +45,7 @@ export const Navbar: React.FC = () => {
               href={headerContent.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 hover:border-point hover:text-point transition-all text-xs font-medium"
+              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-card hover:border-point hover:text-point transition-all text-xs font-medium text-main"
               title="GitHub"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -59,7 +61,7 @@ export const Navbar: React.FC = () => {
               href={headerContent.notionUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 hover:border-point hover:text-point transition-all text-xs font-medium"
+              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-card hover:border-point hover:text-point transition-all text-xs font-medium text-main"
               title="Notion"
             >
               <ExternalLink className="w-4 h-4" />
@@ -70,7 +72,7 @@ export const Navbar: React.FC = () => {
           {/* Dark / Light Theme Switcher */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg border border-slate-300 dark:border-slate-700 hover:border-point text-slate-700 dark:text-slate-200 hover:text-point transition-all"
+            className="p-2 rounded-lg border border-card hover:border-point text-main hover:text-point transition-all"
             aria-label="Toggle dark mode"
           >
             {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}

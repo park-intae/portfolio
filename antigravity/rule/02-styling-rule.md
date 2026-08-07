@@ -43,8 +43,11 @@
 2. **Font Color**: `#0F172A` / `#111827` (선명하고 고급스러운 딥 다크 차콜/네이비)
 3. **Point Color**: `#0066FF` / `#0052FF` (비브런트 일렉트릭 블루 - 섹션 타이틀, 포인트 배지, 버튼 하이라이트)
 
-### 다크 / 라이트 모드 테마 스위칭 규격 (Theme State Spec)
-- **헤더 토글 버튼 (🌙)**: 클릭 시 `document.documentElement` (`<html>` 태그)에 `dark` 클래스를 유연하게 토글합니다.
+### 다크 / 라이트 모드 테마 스위칭 및 변수 통제 규격 (Theme State & Variable Spec)
+- **CSS 변수 기반 중앙집중식 스타일링 통제 원칙 (Mandate)**: 
+  * 컴포넌트 내부에 Tailwind 무채색 하드코딩 클래스(`text-slate-900`, `dark:text-slate-100` 등)를 직접 주입하는 것을 **엄격히 금지**합니다.
+  * 반드시 `:root`, `html.light`, `html.dark` 전역 변수(`--text-main`, `--text-muted`, `--text-caption`, `--card-bg`, `--card-border`)와 1:1 결합된 전용 테마 유틸리티 클래스(`.text-main`, `.text-muted`, `.text-caption`, `.border-card`, `.bg-secondary`)만으로 컴포넌트 스타일을 통제합니다.
+- **헤더 토글 버튼 (🌙)**: 클릭 시 `document.documentElement` (`<html>` 태그)에 `dark` 및 `light` 클래스를 유연하게 토글합니다.
 - **초기 테마 동기화 순서**:
   1) `localStorage.getItem('theme')`에 저장된 모드가 있으면 해당 모드 적용
   2) 저장된 모드가 없으면 `window.matchMedia('(prefers-color-scheme: dark)')` 시스템 설정을 감지하여 적용

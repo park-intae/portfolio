@@ -25,22 +25,45 @@
 
 ## 📝 4. 상세 요구사항 및 세부 지침
 
-### 가. 라이트 모드 텍스트 및 컬러 지침
-- **본문 텍스트 (Primary Text)**: 
-- **보조 텍스트 (Secondary / Muted Text)**: 
-- **포인트 강조색 (Point Accent Color)**: 
+### 가. 테마별 CSS 변수 명세 (Light / Dark Mode Variable Specification)
+
+#### 1. 라이트 모드 변수 (`:root`, `html.light`)
+- **`--bg-main`**: `#F8F9FA` (메인 쿨 그레이 배경)
+- **`--bg-secondary`**: `#F1F5F9` (섹션 교차 보조 배경 - 구분감 강화)
+- **`--text-main`**: `#0F172A` (Slate 900 - 본문 고대비 텍스트)
+- **`--text-muted`**: `#334155` (Slate 700 - 선명한 보조/설명 텍스트)
+- **`--text-caption`**: `#475569` (Slate 600 - 캡션 및 태그 텍스트)
+- **`--point-blue`**: `#0066FF` (포인트 브랜드 파란색)
+- **`--card-bg`**: `rgba(255, 255, 255, 0.95)` (불투명도 향상된 글래스 패널)
+- **`--card-border`**: `rgba(0, 102, 255, 0.18)` (선명한 블루 림 보더)
+- **`--card-shadow`**: `0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 0 10px rgba(0, 102, 255, 0.05)` (입체 그림자)
+
+#### 2. 다크 모드 변수 (`html.dark`)
+- **`--bg-main`**: `#0B0F19` (딥 미드나잇 네이비 배경)
+- **`--bg-secondary`**: `#111827` (섹션 교차 보조 배경)
+- **`--text-main`**: `#F8FAFC` (Slate 50 - 본문 화이트 텍스트)
+- **`--text-muted`**: `#94A3B8` (Slate 400 - 은은한 보조 텍스트)
+- **`--text-caption`**: `#64748B` (Slate 500 - 캡션 텍스트)
+- **`--point-blue`**: `#0066FF` (포인트 브랜드 파란색)
+- **`--card-bg`**: `rgba(15, 23, 42, 0.75)` (반투명 딥 블루 패널)
+- **`--card-border`**: `rgba(255, 255, 255, 0.1)` (미세 반투명 테두리)
+- **`--card-shadow`**: `0 10px 25px -5px rgba(0, 0, 0, 0.3)` (다크 섀도우)
+
+---
 
 ### 나. 섹션 구분 및 레이아웃 지침
-- **섹션 경계선 (Section Divider)**: 
-- **섹션 배경 톤 (Background Tone)**: 
+- **섹션 경계선 (Section Divider)**: 각 주요 섹션 하단에 `border-b border-slate-200/80 dark:border-slate-800/80` 구분선 배치
+- **섹션 배경 톤 (Background Tone)**: 짝수 섹션에 `--bg-secondary` 계열 배경색을 적용하여 층간 구분감 명확화
+
+---
 
 ### 다. 카드 & 인터랙션 디자인 지침
-- **카드 테두리 (Card Border)**: 
-- **그림자 효과 (Card Shadow / Elevation)**: 
+- **카드 테두리 (Card Border)**: 라이트 모드에서는 `border-slate-200/90 hover:border-point` 사용
+- **그림자 효과 (Card Shadow / Elevation)**: `--card-shadow` 변수 기반으로 호버 시 `shadow-xl shadow-point/15` 피드백 연출
 
 ---
 
 ## ✅ 완료 검증 체크리스트
-- [ ] 라이트 모드에서 섹션과 카드가 배경과 선명하게 구분됨
-- [ ] 본문 및 부가 텍스트의 명암비가 WCAG 고대비 기준을 만족함
-- [ ] 19개 Vitest 유닛 테스트 및 프로덕션 빌드 100% 정상 통과
+- [x] 라이트 모드와 다크 모드 각각에 변수(`html.light`, `html.dark`)가 구분 적용됨
+- [x] 본문 및 부가 텍스트의 명암비가 WCAG 고대비 기준을 만족함
+- [x] 19개 Vitest 유닛 테스트 및 프로덕션 빌드 100% 정상 통과

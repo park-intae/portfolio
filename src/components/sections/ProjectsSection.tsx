@@ -38,7 +38,7 @@ export const ProjectsSection: React.FC = () => {
         <h2 className="font-ibm text-3xl sm:text-4xl font-bold tracking-tight text-point mb-2">
           PROJECTS
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
+        <p className="text-muted text-sm font-semibold">
           좌측 프로젝트 카드를 선택하면 우측에 상세 디테일 정보가 상시 엘리베이션 패널로 표출됩니다.
         </p>
       </div>
@@ -56,7 +56,7 @@ export const ProjectsSection: React.FC = () => {
                 className={`glass-panel p-5 rounded-2xl cursor-pointer hover-elevation border relative group ${
                   isSelected
                     ? 'border-point bg-point/5 shadow-lg shadow-point/15 ring-2 ring-point/30'
-                    : 'border-slate-200 dark:border-slate-800'
+                    : 'border-card'
                 }`}
               >
                 {/* Project Image Thumbnail */}
@@ -88,10 +88,10 @@ export const ProjectsSection: React.FC = () => {
                 </div>
 
                 {/* Card Title & Subtitle */}
-                <h3 className="font-ibm font-bold text-lg text-slate-900 dark:text-slate-100 mb-1 leading-snug">
+                <h3 className="font-ibm font-bold text-lg text-main mb-1 leading-snug">
                   {project.title}
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mb-3 leading-relaxed">
+                <p className="text-xs text-muted font-medium line-clamp-2 mb-3 leading-relaxed">
                   {project.subtitle}
                 </p>
 
@@ -100,13 +100,13 @@ export const ProjectsSection: React.FC = () => {
                   {project.tags.slice(0, 3).map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
+                      className="px-2 py-0.5 rounded text-[11px] font-semibold bg-secondary text-main border border-card"
                     >
                       {tag}
                     </span>
                   ))}
                   {project.tags.length > 3 && (
-                    <span className="px-1.5 py-0.5 rounded text-[10px] text-slate-400">
+                    <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold text-caption">
                       +{project.tags.length - 3}
                     </span>
                   )}
@@ -122,7 +122,7 @@ export const ProjectsSection: React.FC = () => {
           className="lg:col-span-5 glass-panel p-6 sm:p-8 rounded-2xl permanent-elevation sticky top-24"
         >
           {/* Active Detail Image */}
-          <div className="relative h-52 w-full mb-6 rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-md">
+          <div className="relative h-52 w-full mb-6 rounded-xl overflow-hidden bg-secondary shadow-md">
             <img
               src={selectedProject.imageUrl}
               alt={selectedProject.title}
@@ -151,22 +151,22 @@ export const ProjectsSection: React.FC = () => {
           {/* Subtitle & Full Description */}
           <div className="space-y-4 mb-6">
             <div>
-              <span className="text-xs font-semibold text-point uppercase tracking-wider block mb-1">
+              <span className="text-xs font-bold text-point uppercase tracking-wider block mb-1">
                 프로젝트 개요
               </span>
-              <p className="text-sm font-semibold text-slate-800 dark:text-slate-200 leading-snug">
+              <p className="text-sm font-bold text-main leading-snug">
                 {selectedProject.subtitle}
               </p>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-muted font-medium leading-relaxed">
               {selectedProject.detailedDescription || selectedProject.description}
             </p>
           </div>
 
           {/* Full Tech Stack Tags */}
           <div className="mb-6">
-            <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">
+            <span className="text-xs font-bold text-caption uppercase tracking-wider block mb-2">
               사용 기술 스택
             </span>
             <div className="flex flex-wrap gap-2">

@@ -10,7 +10,7 @@ export const ExperienceSection: React.FC = () => {
         <h2 className="font-ibm text-3xl sm:text-4xl font-bold tracking-tight text-point mb-2">
           EXPERIENCE & TRAINING
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
+        <p className="text-muted text-sm font-semibold">
           경력 사항(Experience)과 교육/훈련(Training) 수수 내역을 2컬럼 레이아웃으로 전달합니다.
         </p>
       </div>
@@ -18,12 +18,12 @@ export const ExperienceSection: React.FC = () => {
       {/* 2-Column Layout (WIREFRAME Split: Left Experience | Right Training) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         {/* Left Column: Experience */}
-        <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-200 dark:border-slate-800">
+        <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-card shadow-card">
+          <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-card">
             <div className="p-2.5 rounded-xl bg-point/10 text-point">
               <Briefcase className="w-5 h-5" />
             </div>
-            <h3 className="font-ibm text-xl font-bold text-slate-900 dark:text-slate-100">
+            <h3 className="font-ibm text-xl font-bold text-main">
               Experience
             </h3>
           </div>
@@ -35,18 +35,18 @@ export const ExperienceSection: React.FC = () => {
                 className="relative pl-5 border-l-2 border-point/40 hover:border-point transition-colors group"
               >
                 <div className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-point" />
-                <h4 className="font-ibm font-bold text-base text-slate-900 dark:text-slate-100 group-hover:text-point transition-colors">
+                <h4 className="font-ibm font-bold text-base text-main group-hover:text-point transition-colors">
                   {exp.title}
                 </h4>
-                <div className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-2 flex items-center space-x-2">
+                <div className="text-xs font-semibold text-muted mb-2 flex items-center space-x-2">
                   <span>{exp.organization}</span>
                   <span>•</span>
                   <span className="inline-flex items-center space-x-1">
-                    <Calendar className="w-3 h-3" />
+                    <Calendar className="w-3 h-3 text-point" />
                     <span>{exp.period}</span>
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-muted font-medium leading-relaxed">
                   {exp.description}
                 </p>
               </div>
@@ -55,12 +55,12 @@ export const ExperienceSection: React.FC = () => {
         </div>
 
         {/* Right Column: Training */}
-        <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-200 dark:border-slate-800">
+        <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-card shadow-card">
+          <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-card">
             <div className="p-2.5 rounded-xl bg-point/10 text-point">
               <GraduationCap className="w-5 h-5" />
             </div>
-            <h3 className="font-ibm text-xl font-bold text-slate-900 dark:text-slate-100">
+            <h3 className="font-ibm text-xl font-bold text-main">
               Training
             </h3>
           </div>
@@ -72,14 +72,14 @@ export const ExperienceSection: React.FC = () => {
                 className="relative pl-5 border-l-2 border-point/40 hover:border-point transition-colors group"
               >
                 <div className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-point" />
-                <h4 className="font-ibm font-bold text-base text-slate-900 dark:text-slate-100 group-hover:text-point transition-colors">
+                <h4 className="font-ibm font-bold text-base text-main group-hover:text-point transition-colors">
                   {trn.title}
                 </h4>
-                <div className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-2 flex items-center space-x-2">
+                <div className="text-xs font-semibold text-muted mb-2 flex items-center space-x-2">
                   <span>{trn.institution}</span>
                   <span>•</span>
                   <span className="inline-flex items-center space-x-1">
-                    <Calendar className="w-3 h-3" />
+                    <Calendar className="w-3 h-3 text-point" />
                     <span>{trn.period}</span>
                   </span>
                 </div>

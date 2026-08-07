@@ -23,9 +23,9 @@ export const HeroSection: React.FC = () => {
         {/* 3-Line Strength Bullets (WIREFRAME Bullets) */}
         <div className="space-y-4 mb-10">
           {heroContent.strengths.map((bullet, idx) => (
-            <div key={idx} className="flex items-start space-x-3 text-slate-700 dark:text-slate-300">
+            <div key={idx} className="flex items-start space-x-3 text-main">
               <CheckCircle2 className="w-5 h-5 text-point shrink-0 mt-0.5" />
-              <p className="text-base sm:text-lg font-medium leading-relaxed">{bullet}</p>
+              <p className="text-base sm:text-lg font-semibold leading-relaxed">{bullet}</p>
             </div>
           ))}
         </div>
