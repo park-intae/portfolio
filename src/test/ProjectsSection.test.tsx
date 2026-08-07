@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import React from 'react';
 import { ProjectsSection } from '../components/sections/ProjectsSection';
 import { projectsContent } from '../content';
 
@@ -21,7 +20,6 @@ describe('ProjectsSection Component Unit Tests', () => {
       const secondProjectCards = screen.getAllByText(secondProject.title);
       fireEvent.click(secondProjectCards[0]);
 
-      // Active detail panel should now show second project subtitle
       const subtitles = screen.getAllByText(secondProject.subtitle);
       expect(subtitles.length).toBeGreaterThanOrEqual(1);
     }
