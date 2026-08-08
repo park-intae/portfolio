@@ -118,5 +118,32 @@
         "solution": "index.css 내 전역 테마 CSS 변수 기반 유틸리티 클래스(`.text-main`, `.text-muted`, `.border-card` 등)를 설계하고 전 컴포넌트 1:1 교체 완료"
       }
     }
+  ],
+  "otherProjects": [
+    {
+      "id": "other-1",
+      "title": "실시간 날씨 & 대기질 알림 대시보드",
+      "period": "2023.11",
+      "description": "Geolocation API와 OpenWeatherMap API를 연동하여 위치 기반 실시간 날씨 및 대기질 정보를 시각화하는 모바일 웹 앱",
+      "tags": ["React", "TypeScript", "Tailwind CSS"],
+      "githubUrl": "https://github.com/park-intae/weather-dashboard",
+      "demoUrl": "https://example.com/weather"
+    },
+    {
+      "id": "other-2",
+      "title": "마크다운 기반 정적 블로그 제네레이터",
+      "period": "2023.08",
+      "description": "MDX / Markdown 문서를 AST 파싱하여 테마가 적용된 정적 HTML로 고속 변환해 주는 CLI 툴 및 템플릿",
+      "tags": ["Node.js", "Express", "Markdown-it"],
+      "githubUrl": "https://github.com/park-intae/md-static-generator"
+    },
+    {
+      "id": "other-3",
+      "title": "개발자용 뽀모도로 타이머 & TODO 앱",
+      "period": "2023.05",
+      "description": "Local Storage 기반 백업 및 작업 몰입 인터벌 사운드 피드백을 제공하는 경량 웹 타이머",
+      "tags": ["JavaScript", "HTML5", "CSS3"],
+      "githubUrl": "https://github.com/park-intae/pomodoro-todo"
+    }
   ]
 }

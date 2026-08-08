@@ -5,10 +5,12 @@ import type { ProjectItem } from '../../types/portfolio';
 import { ProjectModal } from '../common/ProjectModal';
 import { ProjectCard } from './projects/ProjectCard';
 import { ProjectDetailPanel } from './projects/ProjectDetailPanel';
+import { OtherProjectsList } from './projects/OtherProjectsList';
 import { smoothScrollTo } from '../../utils/scroll';
 
 export const ProjectsSection: React.FC = () => {
   const projectsList = projectsContent.projects;
+  const otherProjectsList = projectsContent.otherProjects;
   const [selectedProject, setSelectedProject] = useState<ProjectItem>(
     projectsList[0] || {
       id: 'default',
@@ -64,7 +66,7 @@ export const ProjectsSection: React.FC = () => {
           PROJECTS
         </h2>
         <p className="text-muted text-sm font-semibold">
-          좌측 프로젝트 카드를 선택하면 우측에 상세 디테일 정보가 상시 엘리베이션 패널로 표출됩니다.
+          좌측 대표 프로젝트 카드를 선택하면 우측에 상세 디테일 정보가 상시 엘리베이션 패널로 표출됩니다.
         </p>
       </motion.div>
 
@@ -95,6 +97,9 @@ export const ProjectsSection: React.FC = () => {
           projectsList={projectsList}
         />
       </div>
+
+      {/* Other Projects Section */}
+      <OtherProjectsList otherProjects={otherProjectsList} />
 
       {/* Interactive Project Detail Modal */}
       <ProjectModal

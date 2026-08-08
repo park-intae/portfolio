@@ -59,8 +59,19 @@ export interface ProjectItem {
   troubleshooting?: ProjectTroubleshooting;
 }
 
+export interface OtherProjectItem {
+  id: string;
+  title: string;
+  period?: string;
+  description: string;
+  tags: string[];
+  githubUrl?: string;
+  demoUrl?: string;
+}
+
 export interface ProjectsData {
   projects: ProjectItem[];
+  otherProjects?: OtherProjectItem[];
 }
 
 export interface ExperienceItem {

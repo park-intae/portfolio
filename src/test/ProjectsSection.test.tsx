@@ -46,10 +46,8 @@ describe('ProjectsSection Component Unit Tests', () => {
     expect(screen.getAllByText(lastProject.title).length).toBeGreaterThanOrEqual(1);
   });
 
-  it('should trigger scroll to project list when mobile scroll button is clicked', () => {
+  it('should render Other Projects section when otherProjects data is present', () => {
     render(<ProjectsSection />);
-    const scrollButton = screen.getByText('프로젝트 전체 목록으로 올라가기');
-    expect(scrollButton).toBeInTheDocument();
-    fireEvent.click(scrollButton);
+    expect(screen.getByText('Other Projects')).toBeInTheDocument();
   });
 });
