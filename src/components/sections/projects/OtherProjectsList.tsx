@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FolderGit2, ArrowUpRight } from 'lucide-react';
+import { FolderGit2, ArrowUpRight, BookOpen } from 'lucide-react';
 import type { OtherProjectItem } from '../../../types/portfolio';
 
 interface OtherProjectsListProps {
@@ -67,6 +67,17 @@ export const OtherProjectsList: React.FC<OtherProjectsListProps> = ({ otherProje
                       title="데모 링크"
                     >
                       <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  )}
+                  {item.notionUrl && (
+                    <a
+                      href={item.notionUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-point transition-colors p-1"
+                      title="노션 상세"
+                    >
+                      <BookOpen className="w-4 h-4" />
                     </a>
                   )}
                 </div>

@@ -48,6 +48,7 @@ export interface ProjectItem {
   imageUrl: string;
   demoUrl?: string;
   githubUrl?: string;
+  notionUrl?: string;
   // 신규 고도화 메타데이터 필드
   period?: string;
   teamType?: 'solo' | 'team';
@@ -67,6 +68,7 @@ export interface OtherProjectItem {
   tags: string[];
   githubUrl?: string;
   demoUrl?: string;
+  notionUrl?: string;
 }
 
 export interface ProjectsData {

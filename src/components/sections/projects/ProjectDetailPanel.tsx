@@ -11,7 +11,8 @@ import {
   Users,
   CheckCircle2,
   TrendingUp,
-  Wrench
+  Wrench,
+  BookOpen
 } from 'lucide-react';
 import type { ProjectItem } from '../../../types/portfolio';
 
@@ -253,6 +254,20 @@ export const ProjectDetailPanel: React.FC<ProjectDetailPanelProps> = ({
                 <Maximize2 className="w-4 h-4" />
                 <span>상세 분석 보기</span>
               </motion.button>
+
+              {selectedProject.notionUrl && (
+                <motion.a
+                  href={selectedProject.notionUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-flex items-center space-x-1.5 px-3.5 py-2.5 rounded-xl border border-card hover:border-point hover:text-point text-xs font-semibold transition-colors text-main"
+                >
+                  <BookOpen className="w-4 h-4" />
+                  <span>Notion 포트폴리오</span>
+                </motion.a>
+              )}
             </div>
 
             {/* Mobile Quick Scroll Button */}

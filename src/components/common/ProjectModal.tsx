@@ -10,8 +10,10 @@ import {
   Users,
   CheckCircle2,
   TrendingUp,
-  Wrench
+  Wrench,
+  BookOpen
 } from 'lucide-react';
+import { createPortal } from 'react-dom';
 
 interface ProjectModalProps {
   project: ProjectItem | null;
@@ -19,7 +21,10 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  const [mounted, setMounted] = React.useState(false);
+
   useEffect(() => {
+    setMounted(true);
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
@@ -43,11 +48,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
     };
   }, [project, onClose]);
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {project && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/75 backdrop-blur-md"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 bg-slate-950/75 backdrop-blur-md"
           onClick={onClose}
           aria-label="Project Detail Modal Backdrop"
           initial={{ opacity: 0 }}
@@ -257,10 +264,25 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   <span>GitHub 저장소</span>
                 </motion.a>
               )}
+
+              {project.notionUrl && (
+                <motion.a
+                  href={project.notionUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-xl border border-card hover:border-point hover:text-point text-xs font-semibold transition-colors text-main"
+                >
+                  <BookOpen className="w-4 h-4" />
+                  <span>Notion 포트폴리오</span>
+                </motion.a>
+              )}
             </div>
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };

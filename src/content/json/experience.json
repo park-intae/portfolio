@@ -2,33 +2,40 @@
   "experiences": [
     {
       "id": "exp-1",
-      "title": "프론트엔드 / 풀스택 개발자",
-      "organization": "테크 솔루션즈 연구소",
-      "period": "2024.03 - 현재",
-      "description": "웹 서비스 프론트엔드 모듈 아키텍처 설계, 반응형 UI 개발 및 하네스 자동화 구축"
-    },
-    {
-      "id": "exp-2",
-      "title": "웹 스튜디오 개발자",
-      "organization": "크리에이티브 코딩 스튜디오",
-      "period": "2023.01 - 2024.02",
-      "description": "고객 맞춤형 반응형 웹사이트 제작 및 데이터 대시보드 렌더링 최적화"
+      "title": "프론트엔드 개발자",
+      "organization": "포리스닥스코리아리미티드(Crypto.com)",
+      "period": "2025.08 - 2025.11",
+      "description": "미니 코인 트레이딩 프로젝트 프론트엔드 참여, 회원가입/프로필 페이지 등 핵심 페이지 제작"
     }
   ],
   "trainings": [
     {
       "id": "trn-1",
-      "title": "모던 웹 & AI 소프트웨어 엔지니어링 딥다이브 과정",
-      "institution": "소프트웨어 아카데미",
-      "period": "2022.06 - 2022.12",
-      "certificateOrNote": "이수 및 우수 수료"
+      "title": "핀테크 산업 웹퍼블리셔 & UI 개발 전문가 과정",
+      "institution": "더인에듀(한국핀테크&서울시 주관)",
+      "period": "2025.05 - 2025.08",
+      "certificateOrNote": "수료 및 공로상 수상"
     },
     {
       "id": "trn-2",
-      "title": "컴퓨터공학 관련 과정 이수",
-      "institution": "대학교 / 교육 기관",
-      "period": "2018.03 - 2022.02",
-      "certificateOrNote": "학사 학위 취득"
+      "title": "백엔드 개발자 부트캠프(Java/Spring)",
+      "institution": "멀티잇",
+      "period": "2023.07 - 2023.12",
+      "certificateOrNote": "수료"
+    },
+    {
+      "id": "trn-3",
+      "title": "풀스택 기초 - 자바스크립트로 시작하기",
+      "institution": "(주)구름",
+      "period": "2023.02 - 2023.04",
+      "certificateOrNote": "수료"
+    },
+    {
+      "id": "trn-4",
+      "title": "경영학부 경영학과",
+      "institution": "광운대학교",
+      "period": "2015.03 - 2023.08",
+      "certificateOrNote": "졸업 및 운경장학상 수상"
     }
   ]
 }

@@ -48,6 +48,10 @@ describe('ProjectsSection Component Unit Tests', () => {
 
   it('should render Other Projects section when otherProjects data is present', () => {
     render(<ProjectsSection />);
-    expect(screen.getByText('Other Projects')).toBeInTheDocument();
+    if (projectsContent.otherProjects && projectsContent.otherProjects.length > 0) {
+      expect(screen.getByText('Other Projects')).toBeInTheDocument();
+    } else {
+      expect(screen.queryByText('Other Projects')).not.toBeInTheDocument();
+    }
   });
 });
