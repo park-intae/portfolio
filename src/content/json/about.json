@@ -4,43 +4,47 @@
       "id": "metric-1",
       "value": "97",
       "label": "Lighthouse",
-      "iconName": "Lighthouse"
+      "iconName": "Lighthouse",
+      "description": "렌더링 전략과 데이터 흐름 설계로 구조적 병목을 제거해 성능을 최적화했습니다."
     },
     {
       "id": "metric-2",
       "value": "85.8%",
       "label": "Test-Coverage",
-      "iconName": "Shield"
+      "iconName": "Shield",
+      "description": "비동기 상태 관리 및 에러 핸들링 구조 설계로 안정적이고 예측 가능한 사용자 경험을 제공합니다."
     },
     {
       "id": "metric-3",
       "value": "5+",
       "label": "Projects Completed",
-      "iconName": "HammerWrench"
+      "iconName": "HammerWrench",
+      "description": "여러 개인•팀 프로젝트를 다수 완주하며 팀장 역할과 기술적 의사결정 경험을 쌓았습니다."
     },
     {
       "id": "metric-4",
       "value": "1,300h",
-      "label": "Total Tech Traingin",
-      "iconName": "GraduationCap"
+      "label": "Total Tech Training",
+      "iconName": "GraduationCap",
+      "description": "풀스택 웹 개발 및 퍼블리싱 과정을 수료하며 실무 프로젝트를 수행하고 기본기를 다졌습니다."
     }
   ],
   "techStackCategories": [
     {
       "categoryName": "Front-End",
-      "skills": ["TypeScript", "React 19", "Next.js", "Redux toolkit", "Zustand", "Tailwind CSS v4", "Vite", "Framer Motion", "Vue.js 3", "Pinia"]
+      "skills": ["*TypeScript", "*React 19", "Next.js", "Redux toolkit", "*Zustand", "*Tailwind CSS v4", "Vite", "Framer Motion", "Vue.js 3", "Pinia"]
     },
     {
       "categoryName": "Back-End & DB",
-      "skills": ["Node.js", "Express", "Nest.js", "Supabase", "RestAPI", "MySQL", "PostgreSQL"]
+      "skills": ["*Node.js", "Express", "Nest.js", "*Supabase", "*RestAPI", "*MySQL", "PostgreSQL"]
     },
     {
       "categoryName": "AI & LLM Engineering",
-      "skills": ["Antigravity CLI", "Gemini CLI", "Gemini API", "Harness Engineering", "Harness Orchestration"]
+      "skills": ["*Antigravity CLI", "Gemini CLI", "*Gemini API", "*Harness Engineering", "Harness Orchestration"]
     },
     {
       "categoryName": "DevOps & Tools",
-      "skills": ["Git", "GitHub", "Docker", "Railway", "Vercel", "Figma"]
+      "skills": ["*Git", "GitHub", "Docker", "Railway", "Vercel", "*Figma"]
     }
   ]
 }

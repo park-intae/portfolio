@@ -68,7 +68,7 @@ export const AboutSection: React.FC = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
             whileHover={{ y: -6, transition: { duration: 0.2 } }}
-            className="glass-panel p-6 rounded-2xl border border-card hover:border-point/40 transition-colors group shadow-card"
+            className="relative glass-panel p-6 rounded-2xl border border-card hover:border-point/40 transition-colors group shadow-card"
           >
             <div className="mb-3 p-2.5 rounded-xl bg-point/10 w-fit group-hover:scale-110 transition-transform">
               {item.iconName && ICON_MAP[item.iconName] ? ICON_MAP[item.iconName] : <Zap className="w-6 h-6 text-point" />}
@@ -79,6 +79,14 @@ export const AboutSection: React.FC = () => {
             <div className="text-xs sm:text-sm font-semibold text-muted">
               {item.label}
             </div>
+
+            {/* Hover Popover Description */}
+            {item.description && (
+              <div className="absolute -top-14 sm:-top-16 left-1/2 -translate-x-1/2 w-48 sm:w-56 p-3 rounded-xl bg-slate-900 dark:bg-slate-800 text-white text-[11px] sm:text-xs font-medium text-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-20">
+                {item.description}
+                <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-slate-900 dark:bg-slate-800 rotate-45" />
+              </div>
+            )}
           </motion.div>
         ))}
       </div>
@@ -102,16 +110,25 @@ export const AboutSection: React.FC = () => {
                 {cat.categoryName}
               </span>
               <div className="flex flex-wrap gap-2.5">
-                {cat.skills.map((skill, sIdx) => (
-                  <motion.span
-                    key={sIdx}
-                    whileHover={{ y: -3, scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                    className="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-secondary text-main border border-card hover:border-point hover:text-point transition-colors cursor-default"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
+                {cat.skills.map((skill, sIdx) => {
+                  const isHighlight = skill.startsWith('*');
+                  const skillName = isHighlight ? skill.trim().substring(1).trim() : skill;
+                  
+                  return (
+                    <motion.span
+                      key={sIdx}
+                      whileHover={{ y: -3, scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
+                      className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold border transition-colors cursor-default ${
+                        isHighlight 
+                          ? 'bg-point/15 text-point border-point/50 shadow-sm' 
+                          : 'bg-secondary text-main border-card hover:border-point hover:text-point'
+                      }`}
+                    >
+                      {skillName}
+                    </motion.span>
+                  );
+                })}
               </div>
             </div>
           ))}

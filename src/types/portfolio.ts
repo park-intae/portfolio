@@ -15,6 +15,7 @@ export interface MetricCard {
   value: string;
   label: string;
   iconName?: string;
+  description?: string;
 }
 
 export interface TechStackCategory {
