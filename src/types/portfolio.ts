@@ -27,6 +27,17 @@ export interface AboutData {
   techStackCategories: TechStackCategory[];
 }
 
+export interface ProjectTroubleshooting {
+  problem: string;
+  cause?: string;
+  solution: string;
+}
+
+export interface ProjectMetric {
+  label: string;
+  value: string;
+}
+
 export interface ProjectItem {
   id: string;
   title: string;
@@ -37,6 +48,15 @@ export interface ProjectItem {
   imageUrl: string;
   demoUrl?: string;
   githubUrl?: string;
+  // 신규 고도화 메타데이터 필드
+  period?: string;
+  teamType?: 'solo' | 'team';
+  teamSize?: string;
+  myRole?: string;
+  contribution?: string;
+  highlights?: string[];
+  metrics?: ProjectMetric[];
+  troubleshooting?: ProjectTroubleshooting;
 }
 
 export interface ProjectsData {

@@ -6,10 +6,29 @@
       "subtitle": "공공데이터 API 기반 요금제 검색 및 비교 서비스",
       "description": "사용자의 통신 사용 패턴에 맞춰 알뜰폰 요금제를 쉽고 빠르게 비교 분석해 주는 모던 웹 서비스입니다.",
       "detailedDescription": "공공데이터 포털의 알뜰폰 API와 실시간 데이터 연동하여 맞춤형 필터링 및 요금제 비교 추천 알고리즘을 구현하였습니다.",
-      "tags": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+      "tags": ["React 19", "TypeScript", "Tailwind CSS", "Vite"],
       "imageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
       "demoUrl": "https://example.com/phone-plan",
-      "githubUrl": "https://github.com/park-intae/phone-plan"
+      "githubUrl": "https://github.com/park-intae/phone-plan",
+      "period": "2024.03 - 2024.06",
+      "teamType": "team",
+      "teamSize": "4명",
+      "myRole": "프론트엔드 리드",
+      "contribution": "전체 프론트엔드 UI 컴포넌트 아키텍처 설계, 공공데이터 API 연동 최적화 및 상태 관리 전담",
+      "highlights": [
+        "공공데이터 API 1,000+ 요금제 데이터 실시간 파싱 및 필터링 구현",
+        "사용자 맞춤형 통신비 절감 비교 추천 알고리즘 탑재",
+        "반응형 웹 UI 구현으로 모바일/데스크톱 100% 뷰포트 대응"
+      ],
+      "metrics": [
+        { "label": "페이지 로딩 속도", "value": "0.8초 달성" },
+        { "label": "API 응답 캐싱률", "value": "94%" }
+      ],
+      "troubleshooting": {
+        "problem": "대용량 요금제 필터링 시 UI 렌더링 지연 발생",
+        "cause": "1,000개 이상의 원본 JSON 필터링 작업이 메인 UI 스레드에서 직접 수행되어 입력 딜레이 유발",
+        "solution": "useMemo 메모이제이션 적용 및 커스텀 디바운스(Debounce) 훅을 적용하여 불필요한 재렌더링을 방지하고 필터 반응 속도 65% 개선"
+      }
     },
     {
       "id": "project-2",
@@ -20,7 +39,26 @@
       "tags": ["React 19", "TypeScript", "WebSockets", "Framer Motion"],
       "imageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
       "demoUrl": "https://example.com/ai-dashboard",
-      "githubUrl": "https://github.com/park-intae/ai-dashboard"
+      "githubUrl": "https://github.com/park-intae/ai-dashboard",
+      "period": "2024.07 - 2024.10",
+      "teamType": "team",
+      "teamSize": "3명",
+      "myRole": "풀스택 개발",
+      "contribution": "AI 에이전트 실행 상태 실시간 웹소켓 연동, 대용량 로그 스트리밍 뷰어 제작 및 반응형 UI 구현",
+      "highlights": [
+        "WebSocket 기반 복수 AI 에이전트 라이브 실시간 상태 파이프라인 시각화",
+        "Virtual List 기술 도입으로 1만+ 줄 대용량 로그 실시간 가상화 렌더링",
+        "Dark / Light 모드 완벽 호환 고대비 대시보드 테마 적용"
+      ],
+      "metrics": [
+        { "label": "로그 스트리밍 지연", "value": "< 50ms" },
+        { "label": "렌더링 메모리 절감", "value": "45%" }
+      ],
+      "troubleshooting": {
+        "problem": "초당 백여 건의 동시 이벤트 수신 시 돔(DOM) 과부하 및 메모리 누수 발생",
+        "cause": "수신 로그를 배열 state에 그대로 append하며 전체 리스트가 매번 재렌더링됨",
+        "solution": "React Virtualized(가상 스크롤) 패턴 적용 및 버퍼링 큐(Buffering Queue) 튜닝으로 화면에 보이는 노드만 선택적 렌더링하도록 개선"
+      }
     },
     {
       "id": "project-3",
@@ -31,7 +69,25 @@
       "tags": ["Next.js", "Node.js", "PostgreSQL", "Chart.js"],
       "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
       "demoUrl": "https://example.com/cloud-metrics",
-      "githubUrl": "https://github.com/park-intae/cloud-metrics"
+      "githubUrl": "https://github.com/park-intae/cloud-metrics",
+      "period": "2024.11 - 2025.01",
+      "teamType": "solo",
+      "myRole": "1인 전담 개발",
+      "contribution": "기획부터 인프라 설계, 시계열 데이터베이스 구축, 차트 시각화 UI 및 배포 자동화까지 전체 100% 수행",
+      "highlights": [
+        "Next.js App Router 기반 서버 컴포넌트(RSC) 최적화로 초기 로딩 속도 극대화",
+        "Chart.js + Canvas 기반 초당 60fps 인터랙티브 트래픽 캔버스 차트 구현",
+        "이상 트래픽 발생 시 즉시 감지하여 웹훅 및 알림 전달 연동"
+      ],
+      "metrics": [
+        { "label": "Lighthouse 성능 점수", "value": "98점" },
+        { "label": "차트 렌더링 프레임", "value": "60 fps" }
+      ],
+      "troubleshooting": {
+        "problem": "실시간 트래픽 데이터 변경 시 차트 전체 깜빡임 현상 발생",
+        "cause": "차트 인스턴스가 렌더링 시마다 destroy 후 re-create되는 로직 문제",
+        "solution": "Chart.js 데이터 ref 객체 바인딩 및 update('none') 애니메이션 억제 기법을 사용하여 데이터 포인트만 부드럽게 갱신되도록 변경"
+      }
     },
     {
       "id": "project-4",
@@ -42,7 +98,25 @@
       "tags": ["React 19", "TypeScript", "Tailwind CSS v4", "GitHub Actions"],
       "imageUrl": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
       "demoUrl": "https://park-intae.github.io/portfolio",
-      "githubUrl": "https://github.com/park-intae/portfolio"
+      "githubUrl": "https://github.com/park-intae/portfolio",
+      "period": "2026.08 - 진행 중",
+      "teamType": "solo",
+      "myRole": "1인 개발 & AI 오케스트레이터",
+      "contribution": "Antigravity 하네스 구축, JSON 데이터 격리 설계, 38개 Vitest 유닛 테스트 작성 및 CI/CD 자동화 수립",
+      "highlights": [
+        "JSON 100% 분리로 데이터-UI 디커플링 완성 및 향후 DB/어드민 확장성 확보",
+        "Vitest 기반 38개 유닛 테스트 100% 통과 무결성 수립",
+        "Framer Motion 마이크로 애니메이션 및 모바일/태블릿 반응형 슬라이드 드로어 구현"
+      ],
+      "metrics": [
+        { "label": "테스트 커버리지", "value": "85.8%" },
+        { "label": "빌드 성공률", "value": "100%" }
+      ],
+      "troubleshooting": {
+        "problem": "다크/라이트 테마 전환 시 하드코딩된 색상 클래스가 테마 변수를 반영하지 못하는 문제",
+        "cause": "Tailwind 하드코딩 색상(`text-slate-900` 등)이 컴포넌트 곳곳에 직접 주입되어 발생",
+        "solution": "index.css 내 전역 테마 CSS 변수 기반 유틸리티 클래스(`.text-main`, `.text-muted`, `.border-card` 등)를 설계하고 전 컴포넌트 1:1 교체 완료"
+      }
     }
   ]
 }
