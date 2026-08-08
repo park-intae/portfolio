@@ -1,13 +1,42 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { aboutContent } from '../../content';
-import { Zap, Award, FolderGit2, CheckCircle2 } from 'lucide-react';
+import { Shield, ShieldCheck, GraduationCap, Hammer, Wrench, Zap } from 'lucide-react';
+
+// 등대 (Lighthouse) 커스텀 렌더링 컴포넌트
+const LighthouseIcon: React.FC = () => (
+  <svg className="w-6 h-6 text-point" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2l-2.5 4h5L12 2z" />
+    <path d="M9.5 6l-2 14h9l-2-14" />
+    <path d="M9 11h6" />
+    <path d="M8.5 16h7" />
+    <path d="M5 20h14" />
+    <path d="M3 8l3 1" />
+    <path d="M21 8l-3 1" />
+  </svg>
+);
+
+// 망치와 렌치 (Hammer & Wrench) 교차 아이콘 컴포넌트
+const HammerWrenchIcon: React.FC = () => (
+  <div className="relative w-6 h-6 flex items-center justify-center">
+    <Hammer className="w-4 h-4 text-point absolute -translate-x-1 -translate-y-0.5 -rotate-45" />
+    <Wrench className="w-4 h-4 text-point absolute translate-x-1 translate-y-0.5 rotate-45" />
+  </div>
+);
 
 const ICON_MAP: Record<string, React.ReactNode> = {
-  Zap: <Zap className="w-6 h-6 text-point" />,
-  Award: <Award className="w-6 h-6 text-point" />,
-  FolderGit2: <FolderGit2 className="w-6 h-6 text-point" />,
-  CheckCircle2: <CheckCircle2 className="w-6 h-6 text-point" />
+  Lighthouse: <LighthouseIcon />,
+  Shield: <Shield className="w-6 h-6 text-point" />,
+  ShieldCheck: <ShieldCheck className="w-6 h-6 text-point" />,
+  HammerWrench: <HammerWrenchIcon />,
+  Wrench: <Wrench className="w-6 h-6 text-point" />,
+  Hammer: <Hammer className="w-6 h-6 text-point" />,
+  GraduationCap: <GraduationCap className="w-6 h-6 text-point" />,
+  // 호환성 폴백
+  Zap: <LighthouseIcon />,
+  Award: <Shield className="w-6 h-6 text-point" />,
+  FolderGit2: <HammerWrenchIcon />,
+  CheckCircle2: <GraduationCap className="w-6 h-6 text-point" />
 };
 
 export const AboutSection: React.FC = () => {

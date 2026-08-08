@@ -2,41 +2,45 @@
   "metrics": [
     {
       "id": "metric-1",
-      "value": "95+",
+      "value": "97",
       "label": "Lighthouse",
-      "iconName": "Zap"
+      "iconName": "Lighthouse"
     },
     {
       "id": "metric-2",
-      "value": "3+ yrs",
-      "label": "Experience",
-      "iconName": "Award"
+      "value": "85.8%",
+      "label": "Test-Coverage",
+      "iconName": "Shield"
     },
     {
       "id": "metric-3",
-      "value": "15+",
+      "value": "5+",
       "label": "Projects Completed",
-      "iconName": "FolderGit2"
+      "iconName": "HammerWrench"
     },
     {
       "id": "metric-4",
-      "value": "99.9%",
-      "label": "Build Success Rate",
-      "iconName": "CheckCircle2"
+      "value": "1,300h",
+      "label": "Total Tech Traingin",
+      "iconName": "GraduationCap"
     }
   ],
   "techStackCategories": [
     {
       "categoryName": "Front-End",
-      "skills": ["React 19", "TypeScript", "Tailwind CSS v4", "Vite", "Framer Motion"]
+      "skills": ["TypeScript", "React 19", "Next.js", "Redux toolkit", "Zustand", "Tailwind CSS v4", "Vite", "Framer Motion", "Vue.js 3", "Pinia"]
     },
     {
       "categoryName": "Back-End & DB",
-      "skills": ["Node.js", "Express", "Python", "FastAPI", "PostgreSQL"]
+      "skills": ["Node.js", "Express", "Nest.js", "Supabase", "RestAPI", "MySQL", "PostgreSQL"]
+    },
+    {
+      "categoryName": "AI & LLM Engineering",
+      "skills": ["Antigravity CLI", "Gemini CLI", "Gemini API", "Harness Engineering", "Harness Orchestration"]
     },
     {
       "categoryName": "DevOps & Tools",
-      "skills": ["Git", "GitHub Actions", "Docker", "Vercel", "Figma"]
+      "skills": ["Git", "GitHub", "Docker", "Railway", "Vercel", "Figma"]
     }
   ]
 }
