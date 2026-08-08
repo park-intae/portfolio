@@ -65,6 +65,14 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <motion.a
+            href="#about"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl glass-panel font-semibold hover:border-point hover:text-point transition-all"
+          >
+            <span>About Me</span>
+          </motion.a>
+          <motion.a
             href="#projects"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
@@ -72,14 +80,6 @@ export const HeroSection: React.FC = () => {
           >
             <span>프로젝트 보기</span>
             <ArrowRight className="w-4 h-4" />
-          </motion.a>
-          <motion.a
-            href="#about"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl glass-panel font-semibold hover:border-point hover:text-point transition-all"
-          >
-            <span>About Me</span>
           </motion.a>
         </motion.div>
       </motion.div>
