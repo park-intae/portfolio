@@ -1,7 +1,7 @@
 {
   "logoText": "PARK INTAE",
   "githubUrl": "https://github.com/park-intae",
-  "notionUrl": "https://notion.so",
+  "notionUrl": "https://app.notion.com/p/shmellang/b7ba118b04eb4c9d9ea6e653a2ea242c",
   "navItems": [
     { "id": "hero", "label": "Home" },
     { "id": "about", "label": "About Me" },

@@ -4,17 +4,7 @@ import { Moon, Sun, ExternalLink, Menu, X } from 'lucide-react';
 import { headerContent } from '../../content';
 import { smoothScrollTo } from '../../utils/scroll';
 
-interface NavItem {
-  id: string;
-  label: string;
-}
 
-const NAV_ITEMS: NavItem[] = [
-  { id: 'hero', label: 'Hero' },
-  { id: 'about', label: 'About Me' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'experience', label: 'Experience' }
-];
 
 export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -62,7 +52,7 @@ export const Navbar: React.FC = () => {
       let maxOverlap = 0;
       let currentActive = activeSection;
 
-      for (const item of NAV_ITEMS) {
+      for (const item of headerContent.navItems) {
         const element = document.getElementById(item.id);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -116,7 +106,7 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop Navigation Links (Visible on lg: 1024px+) */}
         <nav className="hidden lg:flex items-center space-x-6">
-          {NAV_ITEMS.map((item) => (
+          {headerContent.navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
@@ -205,7 +195,7 @@ export const Navbar: React.FC = () => {
                   Navigation Menu
                 </span>
                 <nav className="flex flex-col space-y-4">
-                  {NAV_ITEMS.map((item) => (
+                  {headerContent.navItems.map((item) => (
                     <button
                       key={item.id}
                       onClick={() => handleNavClick(item.id)}

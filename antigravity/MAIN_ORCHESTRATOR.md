@@ -57,8 +57,8 @@ antigravity/
 | **Phase2-02** | **Motion & Animation** | [`step-02-motion-and-animation.md`](file:///C:/Users/pit19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/portfolio/antigravity/workflow/Phase2/step-02-motion-and-animation.md) | **[Completed]** | 60fps 마이크로 애니메이션, 모달 트랜지션 & 도트 양방향 감지 완료 |
 | **Phase2-03** | **Accessibility & Performance** | [`step-03-accessibility-and-performance.md`](file:///C:/Users/pit19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/portfolio/antigravity/workflow/Phase2/step-03-accessibility-and-performance.md) | **[Completed]** | a11y 키보드 포커스링, ARIA 표준 & 자원 로딩 성능 최적화 완료 |
 | **Phase2-04** | **Mobile & Tablet UX** | [`step-04-mobile-ux-and-responsive.md`](file:///C:/Users/pit19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/portfolio/antigravity/workflow/Phase2/step-04-mobile-ux-and-responsive.md) | **[Completed]** | 햄버거 토글, Framer Motion 모바일/태블릿 슬라이드 드로어 & 뷰포트 튜닝 완료 |
-| **Phase3-01** | **Content Realism** | [`PLAN.md`](file:///C:/Users/pit19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/portfolio/antigravity/PLAN.md) | **[In Progress]** | About Me 메트릭 아이콘 및 기술 스택(Front, Back, AI & LLM, DevOps) 실제 데이터 반영 중 |
-| **Phase3-02** | **Performance Optimization** | [`PLAN.md`](file:///C:/Users/pit19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/portfolio/antigravity/PLAN.md) | **[Pending]** | WebP 변환, Lighthouse 95점+ 최종 성능 최적화 (마지막 단계) |
+| **Phase3-01** | **Content Realism** | [`PLAN.md`](file:///C:/Users/pit19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/portfolio/antigravity/PLAN.md) | **[Completed]** | 실제 포트폴리오 이력 및 프로젝트 데이터 기입 완료 |
+| **Phase3-02** | **Performance Optimization** | [`PLAN.md`](file:///C:/Users/pit19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/portfolio/antigravity/PLAN.md) | **[In Progress]** | WebP 변환, Lighthouse 95점+ 최종 성능 최적화 (진행 예정) |
 
 *상태 값 규격: `[Pending]`, `[In Progress]`, `[Blocked]`, `[Completed]`*
 
