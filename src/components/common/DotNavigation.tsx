@@ -70,8 +70,14 @@ export const DotNavigation: React.FC = () => {
             aria-label={`Scroll to ${item.label}`}
             aria-current={isActive ? 'true' : undefined}
           >
-            {/* Tooltip Label on Hover */}
-            <span className="absolute right-8 px-2.5 py-1 rounded glass-panel text-main text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all pointer-events-none shadow-md">
+            {/* Section Label (Visible only when active or hovered) */}
+            <span 
+              className={`absolute right-8 text-[11px] font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-300 pointer-events-none ${
+                isActive 
+                  ? 'text-point opacity-100 translate-x-0' 
+                  : 'text-muted opacity-0 group-hover:opacity-100 group-hover:text-main translate-x-2 group-hover:translate-x-0'
+              }`}
+            >
               {item.label}
             </span>
 
@@ -80,7 +86,7 @@ export const DotNavigation: React.FC = () => {
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 isActive
                   ? 'bg-point scale-125 shadow-[0_0_12px_rgba(0,102,255,0.6)]'
-                  : 'bg-card-border hover:bg-point/50'
+                  : 'bg-slate-400/40 dark:bg-slate-500/40 hover:bg-point/50'
               }`}
             />
           </button>
