@@ -18,6 +18,7 @@ const NAV_ITEMS: NavItem[] = [
 
 export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const [activeSection, setActiveSection] = useState<string>('hero');
 
   // Lazy state initializer to avoid synchronous setState call inside useEffect
   const [isDark, setIsDark] = useState<boolean>(() => {
@@ -51,6 +52,42 @@ export const Navbar: React.FC = () => {
     };
   }, [isMobileMenuOpen]);
 
+  // Track active section for navigation highlighting
+  useEffect(() => {
+    const handleScroll = () => {
+      const viewportHeight = window.innerHeight;
+      const targetTop = viewportHeight * 0.25;
+      const targetBottom = viewportHeight * 0.75;
+
+      let maxOverlap = 0;
+      let currentActive = activeSection;
+
+      for (const item of NAV_ITEMS) {
+        const element = document.getElementById(item.id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const overlapTop = Math.max(rect.top, targetTop);
+          const overlapBottom = Math.min(rect.bottom, targetBottom);
+          const overlap = Math.max(0, overlapBottom - overlapTop);
+
+          if (overlap > maxOverlap) {
+            maxOverlap = overlap;
+            currentActive = item.id;
+          }
+        }
+      }
+
+      if (currentActive !== activeSection) {
+        setActiveSection(currentActive);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activeSection]);
+
   const toggleTheme = () => {
     const nextTheme = !isDark;
     setIsDark(nextTheme);
@@ -83,7 +120,9 @@ export const Navbar: React.FC = () => {
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className="text-xs font-semibold text-muted hover:text-point transition-colors"
+              className={`text-xs font-semibold transition-colors ${
+                activeSection === item.id ? 'text-point' : 'text-muted hover:text-point'
+              }`}
             >
               {item.label}
             </button>
@@ -170,7 +209,9 @@ export const Navbar: React.FC = () => {
                     <button
                       key={item.id}
                       onClick={() => handleNavClick(item.id)}
-                      className="text-left font-ibm text-lg font-semibold text-main hover:text-point transition-colors py-1"
+                      className={`text-left font-ibm text-lg font-semibold transition-colors py-1 ${
+                        activeSection === item.id ? 'text-point' : 'text-main hover:text-point'
+                      }`}
                     >
                       {item.label}
                     </button>
