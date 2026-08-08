@@ -92,13 +92,15 @@
       "imageUrl": "/images/Spellbook.png",
       "githubUrl": "https://github.com/park-intae/SpellBook",
       "notionUrl":"https://app.notion.com/p/shmellang/SpellBook-332b99225a2b802eb530d34516e76d67",
-      "period": "",
+      "period": "2026.03 - 2026.04",
       "contribution": "개인 프로젝트 - 컨셉 기획부터 구현까지 전체 담당",
       "highlights": [
         "Framer Motion 기반 페이지 플립 3D 애니메이션 구현으로 인터랙티브 UI 완성",
         "단순 텍스트 나열이 아닌 '마법 책' 메타포로 몰입감 있는 정보 탐색 UX 제공"
       ],
-      "metrics": [],
+      "metrics": [
+        {"label": "SEO 점수", "value": "100점"}
+      ],
       "troubleshooting": {
         "problem": "Prisma 버전 불일치로 인한 런타임 이슈",
         "cause": "Prisma 버전 간 호환성 문제",
@@ -106,31 +108,40 @@
       }
     }
   ],
-  "otherProjects": [
+ "otherProjects": [
     {
       "id": "other-1",
-      "title": "실시간 날씨 & 대기질 알림 대시보드",
-      "period": "2023.11",
-      "description": "Geolocation API와 OpenWeatherMap API를 연동하여 위치 기반 실시간 날씨 및 대기질 정보를 시각화하는 모바일 웹 앱",
-      "tags": ["React", "TypeScript", "Tailwind CSS"],
-      "githubUrl": "https://github.com/park-intae/weather-dashboard",
-      "demoUrl": "https://example.com/weather"
+      "title": "Bookbook",
+      "period": "",
+      "description": "키워드 기반 도서 추천 커뮤니티 서비스. 팀장으로서 전체 구조 설계 및 UI 인터랙션 구현을 담당",
+      "tags": [
+        "Java Spring",
+        "JSP"
+      ],
+      "githubUrl": "https://github.com/park-intae/JAVA_4_origin.git"
     },
     {
       "id": "other-2",
-      "title": "마크다운 기반 정적 블로그 제네레이터",
-      "period": "2023.08",
-      "description": "MDX / Markdown 문서를 AST 파싱하여 테마가 적용된 정적 HTML로 고속 변환해 주는 CLI 툴 및 템플릿",
-      "tags": ["Node.js", "Express", "Markdown-it"],
-      "githubUrl": "https://github.com/park-intae/md-static-generator"
+      "title": "BookSearch",
+      "period": "",
+      "description": "도서 CRUD 서비스. REST API 기반 데이터 처리 및 검색 기능 구현",
+      "tags": [
+        "TypeScript",
+        "REST API"
+      ],
+      "githubUrl": "https://github.com/park-intae/booksearcher"
     },
     {
       "id": "other-3",
-      "title": "개발자용 뽀모도로 타이머 & TODO 앱",
-      "period": "2023.05",
-      "description": "Local Storage 기반 백업 및 작업 몰입 인터벌 사운드 피드백을 제공하는 경량 웹 타이머",
-      "tags": ["JavaScript", "HTML5", "CSS3"],
-      "githubUrl": "https://github.com/park-intae/pomodoro-todo"
+      "title": "Monaming",
+      "period": "",
+      "description": "이커머스 UI 클론 프로젝트. 레이아웃 구조 개선 및 스타일링 최적화",
+      "tags": [
+        "Vue.js 3",
+        "Express",
+        "MySQL"
+      ],
+      "githubUrl": "https://github.com/park-intae/monaming"
     }
   ]
 }
