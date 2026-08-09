@@ -21,10 +21,8 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
-  const [mounted, setMounted] = React.useState(false);
 
   useEffect(() => {
-    setTimeout(() => setMounted(true), 0);
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
@@ -48,7 +46,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
     };
   }, [project, onClose]);
 
-  if (!mounted) return null;
 
   return createPortal(
     <AnimatePresence>
