@@ -11,27 +11,27 @@
 
 ## 📝 상세 실행 단계 (Action Items)
 
-### [ ] 1. 폰트(Font) 로딩 최적화
+### [x] 1. 폰트(Font) 로딩 최적화
 - **작업 파일**: `index.html` (또는 `src/styles/index.css`)
 - **내용**: 
   - Pretendard (눈누 CDN 등) 및 IBM Plex Sans KR (Google Fonts) 웹 폰트 링크 추가
   - 로딩 최적화를 위해 `<link rel="preconnect">` 적용
   - 폰트 로드 지연 시 텍스트가 안 보이는 현상(FOIT)을 막기 위해 폰트 설정에 `font-display: swap` 반드시 포함
 
-### [ ] 2. 이미지 포맷 WebP 변환 (차세대 이미지 적용)
+### [x] 2. 이미지 포맷 WebP 변환 (차세대 이미지 적용)
 - **작업 내용**:
   - `public/images/` 폴더 내의 `.png` 썸네일 5개(총 약 1.7MB)를 `.webp` 형식으로 압축 변환
   - `src/content/json/projects.json` 내부의 `imageUrl` 경로를 `.png`에서 `.webp`로 전부 일괄 수정
   - 변환 후 기존 `.png` 파일은 용량 확보를 위해 삭제
 
-### [ ] 3. Vite 빌드(Build) 및 번들 최적화
+### [x] 3. Vite 빌드(Build) 및 번들 최적화
 - **작업 파일**: `vite.config.ts`
 - **내용**: 
   - `build.rollupOptions` 속성 추가
   - `manualChunks`를 설정하여 무거운 라이브러리(`react`, `react-dom`, `framer-motion`)를 별도의 vendor 파일로 분리 (Code Splitting)
   - 빌드 최적화 플러그인이 필요할 경우 점검 후 적용
 
-### [ ] 4. 최종 성능 측정 및 커버리지 검증
+### [x] 4. 최종 성능 측정 및 커버리지 검증
 - **작업 내용**:
   - 로컬 프로덕션 빌드(`npm run build` & `npm run preview`) 후 브라우저 Lighthouse 성능(Performance) 점수 **95점 이상** 달성 확인
   - 코드 변경 후 `npm run test:coverage`를 실행하여 70% 이상의 무결성이 깨지지 않았는지 교차 검증

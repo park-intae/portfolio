@@ -39,6 +39,6 @@
 | Step | 과제명 | 대상 파일 | 상태 | 비고 |
 | :--- | :--- | :--- | :---: | :--- |
 | **Phase3-01** | **Content Realism** | `src/content/json/*.json` | **[Completed]** | 실제 포트폴리오 이력/프로젝트 데이터 작성 완료 |
-| **Phase3-02** | **Performance Optimization** | `src/styles/`, `src/utils/` | **[In Progress]** | WebP 변환, Lighthouse 95점+ 최종 성능 최적화 |
+| **Phase3-02** | **Performance Optimization** | `src/styles/`, `src/utils/` | **[Completed]** | WebP 변환, Lighthouse 95점+ 최종 성능 최적화 완료 |
 
 *상태 값 규격: `[Pending]`, `[In Progress]`, `[Completed]`*
