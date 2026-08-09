@@ -24,7 +24,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   const [mounted, setMounted] = React.useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    setTimeout(() => setMounted(true), 0);
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
