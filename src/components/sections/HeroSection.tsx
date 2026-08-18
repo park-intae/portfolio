@@ -2,15 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { heroContent } from '../../content';
 import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { smoothScrollTo } from '../../utils/scroll';
 
 export const HeroSection: React.FC = () => {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="hero" className="relative min-h-[75vh] flex items-center py-20 px-6 overflow-hidden">
@@ -72,25 +66,25 @@ export const HeroSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <motion.a
-            href="#about"
-            onClick={(e) => handleScroll(e, 'about')}
+          <motion.button
+            type="button"
+            onClick={() => smoothScrollTo('about')}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl glass-panel font-semibold hover:border-point hover:text-point transition-all"
           >
             <span>About Me</span>
-          </motion.a>
-          <motion.a
-            href="#projects"
-            onClick={(e) => handleScroll(e, 'projects')}
+          </motion.button>
+          <motion.button
+            type="button"
+            onClick={() => smoothScrollTo('projects')}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-point text-white font-semibold shadow-lg shadow-point/25 hover:bg-blue-700 hover:shadow-point/40 transition-all"
           >
             <span>프로젝트 보기</span>
             <ArrowRight className="w-4 h-4" />
-          </motion.a>
+          </motion.button>
         </motion.div>
       </motion.div>
     </section>
