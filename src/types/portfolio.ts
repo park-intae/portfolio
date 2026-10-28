@@ -82,7 +82,7 @@ export interface ExperienceItem {
   title: string;
   organization: string;
   period: string;
-  description: string;
+  description: string | string[];
 }
 
 export interface TrainingItem {
@@ -91,6 +91,7 @@ export interface TrainingItem {
   institution: string;
   period: string;
   certificateOrNote?: string;
+  description?: string | string[];
 }
 
 export interface ExperienceData {

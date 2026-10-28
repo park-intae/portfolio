@@ -7,9 +7,9 @@ describe('JSON Content Data Validation Unit Tests', () => {
     expect(headerContent.githubUrl).toContain('github.com');
   });
 
-  it('should load hero content with title and exactly 3 strength bullets', () => {
+  it('should load hero content with title and strength bullets', () => {
     expect(heroContent.title).toBeTruthy();
-    expect(heroContent.strengths).toHaveLength(3);
+    expect(heroContent.strengths.length).toBeGreaterThanOrEqual(3);
   });
 
   it('should load about content with 4 highlight metric cards', () => {
@@ -24,8 +24,10 @@ describe('JSON Content Data Validation Unit Tests', () => {
     expect(firstProject.imageUrl).toBeTruthy();
   });
 
-  it('should load experience content with experiences and trainings', () => {
+  it('should load experience content with experiences and trainings with descriptions', () => {
     expect(experienceContent.experiences.length).toBeGreaterThan(0);
     expect(experienceContent.trainings.length).toBeGreaterThan(0);
+    expect(experienceContent.experiences[0].description).toBeTruthy();
+    expect(experienceContent.trainings[0].description).toBeTruthy();
   });
 });

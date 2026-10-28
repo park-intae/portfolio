@@ -16,14 +16,24 @@ describe('ExperienceSection Component Unit Tests', () => {
     experienceContent.experiences.forEach((exp) => {
       expect(screen.getByText(exp.title)).toBeInTheDocument();
       expect(screen.getByText(exp.organization)).toBeInTheDocument();
+      if (Array.isArray(exp.description)) {
+        exp.description.forEach((line) => {
+          expect(screen.getByText(line)).toBeInTheDocument();
+        });
+      }
     });
   });
 
-  it('should render training items from experience.json', () => {
+  it('should render training items and description bullets from experience.json', () => {
     render(<ExperienceSection />);
     experienceContent.trainings.forEach((trn) => {
       expect(screen.getByText(trn.title)).toBeInTheDocument();
       expect(screen.getByText(trn.institution)).toBeInTheDocument();
+      if (Array.isArray(trn.description)) {
+        trn.description.forEach((line) => {
+          expect(screen.getByText(line)).toBeInTheDocument();
+        });
+      }
     });
   });
 });

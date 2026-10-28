@@ -3,6 +3,32 @@ import { motion } from 'framer-motion';
 import { experienceContent } from '../../content';
 import { Briefcase, GraduationCap, Calendar } from 'lucide-react';
 
+const renderDescriptionList = (description?: string | string[]) => {
+  if (!description) return null;
+  const items = Array.isArray(description)
+    ? description
+    : description
+        .split(/(?<=[.!?])\s+/)
+        .map((s) => s.trim())
+        .filter(Boolean);
+
+  if (items.length === 0) return null;
+
+  return (
+    <ul className="space-y-1.5 mt-2">
+      {items.map((item, idx) => (
+        <li
+          key={idx}
+          className="text-xs sm:text-sm text-muted font-medium flex items-start space-x-2 leading-relaxed"
+        >
+          <span className="text-point font-bold select-none shrink-0">•</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 export const ExperienceSection: React.FC = () => {
   return (
     <section id="experience" className="py-20 px-6 max-w-7xl mx-auto">
@@ -18,7 +44,7 @@ export const ExperienceSection: React.FC = () => {
           EXPERIENCE & TRAINING
         </h2>
         <p className="text-muted text-sm font-semibold">
-          경력 사항(Experience)과 교육/훈련(Training) 수수 내역을 2컬럼 레이아웃으로 전달합니다.
+          경력 사항(Experience)과 교육/훈련(Training) 수료 내역을 2컬럼 레이아웃으로 전달합니다.
         </p>
       </motion.div>
 
@@ -63,9 +89,7 @@ export const ExperienceSection: React.FC = () => {
                     <span>{exp.period}</span>
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-muted font-medium leading-relaxed">
-                  {exp.description}
-                </p>
+                {renderDescriptionList(exp.description)}
               </motion.div>
             ))}
           </div>
@@ -111,10 +135,11 @@ export const ExperienceSection: React.FC = () => {
                   </span>
                 </div>
                 {trn.certificateOrNote && (
-                  <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-semibold bg-point/10 text-point border border-point/20">
+                  <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-semibold bg-point/10 text-point border border-point/20 mb-1.5">
                     {trn.certificateOrNote}
                   </span>
                 )}
+                {renderDescriptionList(trn.description)}
               </motion.div>
             ))}
           </div>

@@ -2,49 +2,83 @@
   "metrics": [
     {
       "id": "metric-1",
-      "value": "97",
-      "label": "Lighthouse",
+      "value": "98",
+      "label": "Lighthouse Score",
       "iconName": "Lighthouse",
-      "description": "렌더링 전략과 데이터 흐름 설계로 구조적 병목을 제거해 성능을 최적화했습니다."
+      "description": "실행 환경에 맞춘 CSR 전환과 번들 최적화로 코어 웹 바이탈 및 성능 점수를 67점에서 98점으로 개선했습니다."
     },
     {
       "id": "metric-2",
-      "value": "85.8%",
-      "label": "Test-Coverage",
-      "iconName": "Shield",
-      "description": "비동기 상태 관리 및 에러 핸들링 구조 설계로 안정적이고 예측 가능한 사용자 경험을 제공합니다."
+      "value": "< 100ms",
+      "label": "Perceived TTFB",
+      "iconName": "Zap",
+      "description": "정량 추천과 AI 추론을 분리한 비동기 투트랙 아키텍처로 체감 대기 시간을 극단적으로 단축했습니다."
     },
     {
       "id": "metric-3",
-      "value": "5+",
-      "label": "Projects Completed",
-      "iconName": "HammerWrench",
-      "description": "여러 개인•팀 프로젝트를 다수 완주하며 팀장 역할과 기술적 의사결정 경험을 쌓았습니다."
+      "value": "100",
+      "label": "SEO Score",
+      "iconName": "SearchCheck",
+      "description": "Next.js 동적 메타데이터와 동적 사이트맵 생성을 통해 웹 표준 검색엔진 최적화 100점을 달성했습니다."
     },
     {
       "id": "metric-4",
-      "value": "1,300h",
-      "label": "Total Tech Training",
-      "iconName": "GraduationCap",
-      "description": "풀스택 웹 개발 및 퍼블리싱 과정을 수료하며 실무 프로젝트를 수행하고 기본기를 다졌습니다."
+      "value": "92.1%",
+      "label": "Test Coverage",
+      "iconName": "Shield",
+      "description": "Vitest 기반 풀스택 테스트 스위트를 구축해 비동기 상태 변화와 엣지 케이스 회귀 버그를 사전에 차단했습니다."
     }
   ],
   "techStackCategories": [
     {
       "categoryName": "Front-End",
-      "skills": ["*TypeScript", "*React 19", "Next.js", "Redux toolkit", "*Zustand", "*Tailwind CSS v4", "Vite", "Framer Motion", "Vue.js 3", "Pinia"]
+      "skills": [
+        "*TypeScript",
+        "*React 19",
+        "*Next.js (App Router)",
+        "*Tailwind CSS v4",
+        "*Redux Toolkit",
+        "*Zustand",
+        "Vite",
+        "Framer Motion",
+        "Chart.js",
+        "Vue.js 3"
+      ]
     },
     {
-      "categoryName": "Back-End & DB",
-      "skills": ["*Node.js", "Express", "Nest.js", "*Supabase", "*RestAPI", "*MySQL", "PostgreSQL"]
+      "categoryName": "Back-End & Security",
+      "skills": [
+        "*NestJS",
+        "*Supabase (Edge Functions)",
+        "*PostgreSQL",
+        "MySQL",
+        "Prisma",
+        "Drizzle ORM",
+        "REST API",
+        "Cheerio (Web Crawling)"
+      ]
     },
     {
-      "categoryName": "AI & LLM Engineering",
-      "skills": ["*Antigravity CLI", "Gemini CLI", "*Gemini API", "*Harness Engineering", "Harness Orchestration"]
+      "categoryName": "AI & Architecture Strategy",
+      "skills": [
+        "*Gemini API",
+        "*Prompt Engineering",
+        "*Multi-stage Fallback",
+        "*Two-Track Async Pattern",
+        "Harness Engineering"
+      ]
     },
     {
-      "categoryName": "DevOps & Tools",
-      "skills": ["*Git", "GitHub", "Docker", "Railway", "Vercel", "*Figma"]
+      "categoryName": "DevOps & Testing",
+      "skills": [
+        "*Turborepo (SSOT)",
+        "*Vitest",
+        "*React Testing Library",
+        "Docker & Docker Compose",
+        "GitHub Actions CI/CD",
+        "Git",
+        "Figma"
+      ]
     }
   ]
 }
