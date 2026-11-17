@@ -1,11 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Maximize2, Calendar, User, Users } from 'lucide-react';
+import { Maximize2, Calendar, User, Users, Sparkles } from 'lucide-react';
 import type { ProjectItem } from '../../../types/portfolio';
 
 interface ProjectCardProps {
   project: ProjectItem;
   isSelected: boolean;
+  isHighlighted?: boolean;
+  isDimmed?: boolean;
+  highlightedSkillName?: string | null;
   onSelect: (project: ProjectItem) => void;
   onOpenModal: (project: ProjectItem) => void;
   idx: number;
@@ -14,6 +17,9 @@ interface ProjectCardProps {
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
   isSelected,
+  isHighlighted = false,
+  isDimmed = false,
+  highlightedSkillName,
   onSelect,
   onOpenModal,
   idx
@@ -27,12 +33,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       whileHover={{ y: -6, transition: { duration: 0.2 } }}
       whileTap={{ scale: 0.98 }}
       onClick={() => onSelect(project)}
-      className={`glass-panel p-5 rounded-2xl cursor-pointer border relative group transition-colors flex flex-col justify-between ${
-        isSelected
-          ? 'border-point bg-point/5 shadow-lg shadow-point/15 ring-2 ring-point/30'
-          : 'border-card'
-      }`}
+      className={`glass-panel p-5 rounded-2xl cursor-pointer border relative group transition-all duration-300 flex flex-col justify-between ${
+        isHighlighted
+          ? 'border-point ring-2 ring-point shadow-xl shadow-point/30 bg-point/10 z-10 scale-[1.02]'
+          : isSelected
+            ? 'border-point bg-point/5 shadow-lg shadow-point/15 ring-2 ring-point/30'
+            : 'border-card'
+      } ${isDimmed && !isHighlighted ? 'opacity-50 grayscale-[35%] hover:opacity-100 hover:grayscale-0' : 'opacity-100'}`}
     >
+      {/* Skill Match Highlight Ribbon Badge */}
+      {isHighlighted && (
+        <div className="absolute -top-3 left-4 px-2.5 py-0.5 rounded-full bg-point text-white text-[10px] font-bold shadow-md flex items-center space-x-1 z-20">
+          <Sparkles className="w-3 h-3 fill-current" />
+          <span>{highlightedSkillName ? `${highlightedSkillName} 적용` : '기술 스택 매칭'}</span>
+        </div>
+      )}
+
       <div>
         {/* Project Image Thumbnail */}
         <div className="relative h-40 w-full mb-4 rounded-xl overflow-hidden bg-secondary">
@@ -48,7 +64,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
           )}
 
-          {/* Quick Period & Team Pills overlay on Image */}
+          {/* Quick Period overlay on Image */}
           {project.period && (
             <div className="absolute bottom-2.5 left-2.5 flex items-center space-x-1.5 bg-slate-950/75 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-medium text-white shadow-sm border border-white/10">
               <Calendar className="w-3 h-3 text-point" />

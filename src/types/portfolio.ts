@@ -2,12 +2,15 @@ export interface HeaderData {
   logoText: string;
   githubUrl: string;
   notionUrl: string;
+  email?: string;
+  phone?: string;
+  location?: string;
   navItems: { id: string; label: string }[];
 }
 
 export interface HeroData {
   title: string;
-  strengths: [string, string, string];
+  strengths: [string, string, string, string] | string[];
 }
 
 export interface MetricCard {
@@ -39,6 +42,12 @@ export interface ProjectMetric {
   value: string;
 }
 
+export interface OptimizationImpact {
+  before: string;
+  after: string;
+  impact: string;
+}
+
 export interface ProjectItem {
   id: string;
   title: string;
@@ -59,12 +68,14 @@ export interface ProjectItem {
   highlights?: string[];
   metrics?: ProjectMetric[];
   troubleshooting?: ProjectTroubleshooting;
+  optimizationImpact?: OptimizationImpact;
 }
 
 export interface OtherProjectItem {
   id: string;
   title: string;
   period?: string;
+  teamType?: 'solo' | 'team';
   description: string;
   tags: string[];
   githubUrl?: string;

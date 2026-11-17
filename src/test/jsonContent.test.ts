@@ -1,10 +1,11 @@
 import { describe, it, expect } from 'vitest';
 import { headerContent, heroContent, aboutContent, projectsContent, experienceContent } from '../content';
 
-describe('JSON Content Data Validation Unit Tests', () => {
+describe('Content Data Validation Unit Tests', () => {
   it('should load header content with valid logo text and links', () => {
     expect(headerContent.logoText).toBeTruthy();
     expect(headerContent.githubUrl).toContain('github.com');
+    expect(headerContent.email).toBe('pintae04@gmail.com');
   });
 
   it('should load hero content with title and strength bullets', () => {
@@ -17,10 +18,10 @@ describe('JSON Content Data Validation Unit Tests', () => {
     expect(aboutContent.techStackCategories.length).toBeGreaterThan(0);
   });
 
-  it('should load projects content with at least one project', () => {
+  it('should load projects content with at least one project and Boim as first', () => {
     expect(projectsContent.projects.length).toBeGreaterThan(0);
     const firstProject = projectsContent.projects[0];
-    expect(firstProject.title).toBeTruthy();
+    expect(firstProject.title).toBe('Boim');
     expect(firstProject.imageUrl).toBeTruthy();
   });
 

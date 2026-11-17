@@ -54,4 +54,10 @@ describe('ProjectsSection Component Unit Tests', () => {
       expect(screen.queryByText('Other Projects')).not.toBeInTheDocument();
     }
   });
+
+  it('should render highlight banner and badges when highlightedSkill prop is provided', () => {
+    render(<ProjectsSection highlightedSkill="TypeScript" />);
+    expect(screen.getByText(/선택된 기술/)).toBeInTheDocument();
+    expect(screen.getByText(/"TypeScript"/)).toBeInTheDocument();
+  });
 });

@@ -1,0 +1,64 @@
+import type { ExperienceData } from '../../types/portfolio';
+
+export const experienceContent: ExperienceData = {
+  experiences: [
+    {
+      id: 'exp-1',
+      title: '프론트엔드 개발자 (인턴)',
+      organization: '포리스닥스코리아리미티드 (Crypto.com)',
+      period: '2025.08 - 2025.10',
+      description: [
+        '사내 거래소 프로토타입(Crypto.mini.X)의 Vue 3 및 Tailwind CSS 기반 반응형 UI 컴포넌트 모듈화',
+        '회원가입 및 프로필 관리 페이지의 사용자 흐름 분석을 통한 UX 개선 및 폼 입력 유효성 검증 설계',
+        '백엔드 RESTful API 엔드포인트 설계 과정에 참여하여 프론트엔드 요구사항 기반 데이터 규격 협의',
+        'Pinia 전역 상태 관리와 라우터 간 데이터 정합성을 검증하여 화면 상태 동기화 안정성 확보'
+      ]
+    }
+  ],
+  trainings: [
+    {
+      id: 'trn-1',
+      title: '핀테크 산업 웹퍼블리셔 & UI 개발 전문가 과정',
+      institution: '더인에듀 (한국핀테크지원센터 & 서울시 주관)',
+      period: '2025.05 - 2025.08',
+      certificateOrNote: '수료 및 공로상 수상',
+      description: [
+        '반응형 웹 표준 및 인터랙션 구현 중심의 실무 퍼블리싱 역량 심화',
+        '다중 뷰포트 그리드 구축 및 UI 구조화 훈련 수료'
+      ]
+    },
+    {
+      id: 'trn-2',
+      title: '백엔드 개발자 부트캠프 (Java/Spring)',
+      institution: '멀티잇',
+      period: '2023.07 - 2023.12',
+      certificateOrNote: '수료',
+      description: [
+        'RESTful API 아키텍처 및 RDB 스키마 모델링 학습',
+        '팀장으로서 WBS 일정 관리 및 협업 프로세스 조율'
+      ]
+    },
+    {
+      id: 'trn-3',
+      title: '풀스택 기초 - 자바스크립트로 시작하기',
+      institution: '(주)구름',
+      period: '2023.02 - 2023.04',
+      certificateOrNote: '수료',
+      description: [
+        'JavaScript 코어 동작 메커니즘 및 이벤트 루프 기반 비동기 런타임 학습',
+        '웹 표준 기초 확립'
+      ]
+    },
+    {
+      id: 'trn-4',
+      title: '경영학부 경영학과',
+      institution: '광운대학교',
+      period: '2015.03 - 2023.08',
+      certificateOrNote: '졸업 및 운경장학상 수상',
+      description: [
+        '소비자 행동 분석 및 데이터 기반 의사결정 이론 이수',
+        '사용자 이탈 방어 및 전환율 중심의 UX 설계 기초 확립'
+      ]
+    }
+  ]
+} satisfies ExperienceData;

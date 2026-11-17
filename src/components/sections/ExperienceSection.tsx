@@ -44,7 +44,7 @@ export const ExperienceSection: React.FC = () => {
           EXPERIENCE & TRAINING
         </h2>
         <p className="text-muted text-sm font-semibold">
-          경력 사항(Experience)과 교육/훈련(Training) 수료 내역을 2컬럼 레이아웃으로 전달합니다.
+          실무 협업 경험과 개발자로서의 지속적인 성장 궤적입니다.
         </p>
       </motion.div>
 

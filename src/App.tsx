@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BackgroundEffects } from './components/common/BackgroundEffects';
 import { Navbar } from './components/common/Navbar';
 import { DotNavigation } from './components/common/DotNavigation';
@@ -9,6 +9,8 @@ import { ExperienceSection } from './components/sections/ExperienceSection';
 import { Footer } from './components/common/Footer';
 
 export const App: React.FC = () => {
+  const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen flex flex-col selection:bg-point selection:text-white relative">
       {/* Background Ambient Particle Effects */}
@@ -23,8 +25,14 @@ export const App: React.FC = () => {
       {/* Main Landing SPA Content Sections */}
       <main className="flex-grow relative z-10">
         <HeroSection />
-        <AboutSection />
-        <ProjectsSection />
+        <AboutSection
+          selectedSkill={selectedSkill}
+          onSelectSkill={setSelectedSkill}
+        />
+        <ProjectsSection
+          highlightedSkill={selectedSkill}
+          onClearSkill={() => setSelectedSkill(null)}
+        />
         <ExperienceSection />
       </main>
 

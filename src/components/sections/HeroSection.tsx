@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { heroContent } from '../../content';
-import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { heroContent, headerContent } from '../../content';
+import { Sparkles, ArrowRight, CheckCircle2, Mail, Check, Copy } from 'lucide-react';
 import { smoothScrollTo } from '../../utils/scroll';
 
 export const HeroSection: React.FC = () => {
+  const [copied, setCopied] = useState<boolean>(false);
+
+  const handleCopyEmail = () => {
+    if (headerContent.email) {
+      navigator.clipboard.writeText(headerContent.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   return (
     <section id="hero" className="relative min-h-[75vh] flex items-center py-20 px-6 overflow-hidden">
@@ -61,20 +70,11 @@ export const HeroSection: React.FC = () => {
 
         {/* CTA Actions */}
         <motion.div
-          className="flex flex-wrap gap-4"
+          className="flex flex-wrap items-center gap-4"
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <motion.button
-            type="button"
-            onClick={() => smoothScrollTo('about')}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl glass-panel font-semibold hover:border-point hover:text-point transition-all"
-          >
-            <span>About Me</span>
-          </motion.button>
           <motion.button
             type="button"
             onClick={() => smoothScrollTo('projects')}
@@ -85,6 +85,41 @@ export const HeroSection: React.FC = () => {
             <span>프로젝트 보기</span>
             <ArrowRight className="w-4 h-4" />
           </motion.button>
+
+          <motion.button
+            type="button"
+            onClick={() => smoothScrollTo('about')}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl glass-panel font-semibold hover:border-point hover:text-point transition-all"
+          >
+            <span>About Me</span>
+          </motion.button>
+
+          {headerContent.email && (
+            <motion.button
+              type="button"
+              onClick={handleCopyEmail}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center space-x-2 px-4 py-3 rounded-xl border border-card bg-secondary/60 hover:border-point text-main text-xs sm:text-sm font-semibold transition-all group"
+              title={`클릭하여 이메일 복사 (${headerContent.email})`}
+              aria-label={`이메일 복사 ${headerContent.email}`}
+            >
+              <Mail className="w-4 h-4 text-point" />
+              <span className="text-xs sm:text-sm font-semibold text-muted group-hover:text-main transition-colors">
+                {headerContent.email}
+              </span>
+              {copied ? (
+                <span className="inline-flex items-center space-x-1 text-point text-xs font-bold pl-1">
+                  <Check className="w-3.5 h-3.5" />
+                  <span>복사됨!</span>
+                </span>
+              ) : (
+                <Copy className="w-3.5 h-3.5 text-muted group-hover:text-point transition-colors" />
+              )}
+            </motion.button>
+          )}
         </motion.div>
       </motion.div>
     </section>

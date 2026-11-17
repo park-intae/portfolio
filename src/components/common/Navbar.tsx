@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Moon, Sun, ExternalLink, Menu, X } from 'lucide-react';
+import { Moon, Sun, ExternalLink, Menu, X, Mail, Check, Phone } from 'lucide-react';
 import { headerContent } from '../../content';
 import { smoothScrollTo } from '../../utils/scroll';
 
@@ -9,6 +9,15 @@ import { smoothScrollTo } from '../../utils/scroll';
 export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('hero');
+  const [copiedEmail, setCopiedEmail] = useState<boolean>(false);
+
+  const handleCopyEmail = () => {
+    if (headerContent.email) {
+      navigator.clipboard.writeText(headerContent.email);
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2000);
+    }
+  };
 
   // Lazy state initializer to avoid synchronous setState call inside useEffect
   const [isDark, setIsDark] = useState<boolean>(() => {
@@ -121,6 +130,21 @@ export const Navbar: React.FC = () => {
 
         {/* Action Links & Mobile Menu Toggle */}
         <div className="flex items-center space-x-3 sm:space-x-4">
+          {/* Email Copy Button */}
+          {headerContent.email && (
+            <button
+              onClick={handleCopyEmail}
+              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-card hover:border-point hover:text-point transition-all text-xs font-medium text-main group"
+              title={`클릭하여 이메일 복사 (${headerContent.email})`}
+              aria-label="이메일 복사"
+            >
+              {copiedEmail ? <Check className="w-4 h-4 text-point" /> : <Mail className="w-4 h-4" />}
+              <span className="hidden sm:inline font-semibold">
+                {copiedEmail ? '복사됨!' : 'E-mail'}
+              </span>
+            </button>
+          )}
+
           {/* GitHub Button */}
           {headerContent.githubUrl && (
             <a
@@ -211,6 +235,28 @@ export const Navbar: React.FC = () => {
 
               {/* Mobile/Tablet Drawer Footer Actions */}
               <div className="pt-6 border-t border-card space-y-3">
+                {headerContent.email && (
+                  <div className="space-y-1.5 pb-2 border-b border-card/60">
+                    <span className="text-[11px] font-semibold text-caption block">연락처</span>
+                    <button
+                      onClick={handleCopyEmail}
+                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg bg-secondary text-main text-xs font-medium border border-card"
+                    >
+                      <span className="truncate">{headerContent.email}</span>
+                      {copiedEmail ? <Check className="w-3.5 h-3.5 text-point" /> : <Mail className="w-3.5 h-3.5 text-muted" />}
+                    </button>
+                    {headerContent.phone && (
+                      <a
+                        href={`tel:${headerContent.phone}`}
+                        className="w-full flex items-center justify-between px-3 py-2 rounded-lg bg-secondary text-main text-xs font-medium border border-card"
+                      >
+                        <span>{headerContent.phone}</span>
+                        <Phone className="w-3.5 h-3.5 text-muted" />
+                      </a>
+                    )}
+                  </div>
+                )}
+
                 <div className="flex items-center justify-between text-xs text-muted font-medium">
                   <span>테마 모드</span>
                   <button

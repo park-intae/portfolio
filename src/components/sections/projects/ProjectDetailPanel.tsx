@@ -12,9 +12,11 @@ import {
   CheckCircle2,
   TrendingUp,
   Wrench,
-  BookOpen
+  BookOpen,
+  GitBranch
 } from 'lucide-react';
 import type { ProjectItem } from '../../../types/portfolio';
+import { OptimizationBadge } from '../../common/OptimizationBadge';
 
 interface ProjectDetailPanelProps {
   selectedProject: ProjectItem;
@@ -211,6 +213,11 @@ export const ProjectDetailPanel: React.FC<ProjectDetailPanelProps> = ({
             </div>
           )}
 
+          {/* Optimization Impact Facts */}
+          {selectedProject.optimizationImpact && (
+            <OptimizationBadge impact={selectedProject.optimizationImpact} />
+          )}
+
           {/* Tech Stack Pills */}
           <div>
             <span className="text-[11px] font-bold text-caption uppercase tracking-wider block mb-2">
@@ -230,7 +237,7 @@ export const ProjectDetailPanel: React.FC<ProjectDetailPanelProps> = ({
 
           {/* Action Links & Modal Opener */}
           <div className="flex flex-col space-y-2.5 pt-3 border-t border-card">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center flex-wrap gap-2.5">
               {selectedProject.demoUrl && (
                 <motion.a
                   href={selectedProject.demoUrl}
@@ -238,10 +245,25 @@ export const ProjectDetailPanel: React.FC<ProjectDetailPanelProps> = ({
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="flex-1 inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl bg-point text-white text-xs font-semibold shadow-md hover:bg-blue-700 transition-colors"
+                  className="flex-1 min-w-[120px] inline-flex items-center justify-center space-x-1.5 px-3.5 py-2.5 rounded-xl bg-point text-white text-xs font-semibold shadow-md hover:bg-blue-700 transition-colors"
                 >
                   <span>데모 바로가기</span>
                   <ArrowUpRight className="w-4 h-4" />
+                </motion.a>
+              )}
+
+              {selectedProject.githubUrl && (
+                <motion.a
+                  href={selectedProject.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-flex items-center space-x-1.5 px-3 py-2.5 rounded-xl border border-card hover:border-point hover:text-point text-xs font-semibold transition-colors text-main"
+                  title="GitHub 저장소"
+                >
+                  <GitBranch className="w-3.5 h-3.5 text-point" />
+                  <span>GitHub 코드</span>
                 </motion.a>
               )}
 
@@ -262,9 +284,9 @@ export const ProjectDetailPanel: React.FC<ProjectDetailPanelProps> = ({
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center space-x-1.5 px-3.5 py-2.5 rounded-xl border border-card hover:border-point hover:text-point text-xs font-semibold transition-colors text-main"
+                  className="inline-flex items-center space-x-1.5 px-3 py-2.5 rounded-xl border border-card hover:border-point hover:text-point text-xs font-semibold transition-colors text-main"
                 >
-                  <BookOpen className="w-4 h-4" />
+                  <BookOpen className="w-3.5 h-3.5 text-point" />
                   <span>Notion 포트폴리오</span>
                 </motion.a>
               )}

@@ -14,6 +14,7 @@ import {
   BookOpen
 } from 'lucide-react';
 import { createPortal } from 'react-dom';
+import { OptimizationBadge } from './OptimizationBadge';
 
 interface ProjectModalProps {
   project: ProjectItem | null;
@@ -209,6 +210,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   </div>
                 </div>
               </div>
+            )}
+
+            {/* Optimization Impact Facts */}
+            {project.optimizationImpact && (
+              <OptimizationBadge impact={project.optimizationImpact} />
             )}
 
             {/* Tech Stack Pills */}

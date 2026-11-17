@@ -41,9 +41,16 @@ export const OtherProjectsList: React.FC<OtherProjectsListProps> = ({ otherProje
           >
             <div>
               <div className="flex items-center justify-between mb-2">
-                <span className="text-[11px] font-bold text-point font-ibm bg-point/10 px-2 py-0.5 rounded">
-                  {item.period || 'Sub Project'}
-                </span>
+                <div className="flex items-center space-x-1.5 flex-wrap gap-y-1">
+                  <span className="text-[11px] font-bold text-point font-ibm bg-point/10 px-2 py-0.5 rounded">
+                    {item.period || 'Sub Project'}
+                  </span>
+                  {item.teamType && (
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-secondary text-main border border-card">
+                      {item.teamType === 'team' ? '팀 프로젝트' : '개인 프로젝트'}
+                    </span>
+                  )}
+                </div>
                 <div className="flex items-center space-x-2 text-muted">
                   {item.githubUrl && (
                     <a
